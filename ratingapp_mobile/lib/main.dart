@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ratingapp_mobile/screens/welcome_screen.dart';
+import 'package:ratingapp_mobile/screens/login_screen.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -11,12 +12,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Rating App',
-      home: Scaffold(
-        appBar: AppBar(
-          toolbarHeight: 0.0,
-        ),
-        body: const WelcomeScreen(),
-      ),
+      initialRoute: "/",
+      routes: {
+        "/": (context) => const WelcomeScreen(),
+        "/login": (context) => const LoginScreen(),
+      },
     );
   }
 }

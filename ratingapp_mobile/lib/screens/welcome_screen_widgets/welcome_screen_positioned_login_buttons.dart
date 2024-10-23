@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:ratingapp_mobile/screens/login_screen.dart';
 class WelcomeScreenPositionedLoginButtons extends StatelessWidget {
   const WelcomeScreenPositionedLoginButtons({
     super.key,
@@ -17,7 +17,9 @@ class WelcomeScreenPositionedLoginButtons extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, '/login');
+            },
             style: ElevatedButton.styleFrom(
               backgroundColor: const Color(0xFF00A5E0),
               shape: RoundedRectangleBorder(
