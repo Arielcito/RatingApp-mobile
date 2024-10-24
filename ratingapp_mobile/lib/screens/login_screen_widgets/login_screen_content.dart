@@ -1,17 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:ratingapp_mobile/screens/custom_styles.dart';
 
 class LoginScreenContent extends StatelessWidget {
   const LoginScreenContent({super.key});
 
   @override
   Widget build(BuildContext context) {
-    const azulClaro = Color(0xFF003459);
-    const azulOscuro = Color(0xFF003366);
     const textStyle14 = TextStyle(
         color: Colors.white,
         fontSize: 14,
-        fontWeight: FontWeight.w400,
-        fontFamily: 'Poppins');
+        fontWeight: FontWeight.w600,
+        fontFamily: 'Poppins',
+        shadows: [
+          Shadow(
+            color: Colors.black87,
+            offset: Offset(1.0, 1.0),
+            blurRadius: 2.0,
+          ),
+        ]);
 
     const textStyle16 = TextStyle(
         color: Colors.white,
@@ -50,70 +56,19 @@ class LoginScreenContent extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 30),
           child: TextField(
-            decoration: InputDecoration(
-              contentPadding: const EdgeInsets.all(20),
-              filled: true,
-              fillColor: azulOscuro.withOpacity(0.2),
-              labelText: 'Email',
-              labelStyle: textStyle16,
-              border: const OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(10)),
-                borderSide: BorderSide(color: azulClaro, width: 2.0),
-              ),
-              focusedBorder: const OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(10)),
-                borderSide: BorderSide(color: azulClaro, width: 2.0),
-              ),
-              enabledBorder: const OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(10)),
-                borderSide: BorderSide(color: azulClaro, width: 2.0),
-              ),
-              errorBorder: const OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(10)),
-                borderSide: BorderSide(color: azulClaro, width: 2.0),
-              ),
-              focusedErrorBorder: const OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(10)),
-                borderSide: BorderSide(color: azulClaro, width: 2.0),
-              ),
-            ),
+            decoration: CustomStyles.inputDecoration.copyWith(labelText: 'Email'),
           ),
         ),
         const SizedBox(height: 25),
-        const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 30),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 30),
           child: TextField(
             obscureText: true,
-            decoration: InputDecoration(
-              contentPadding: EdgeInsets.all(20),
-              filled: true,
-              fillColor: azulClaro,
-              labelText: 'Contraseña',
-              labelStyle: textStyle16,
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(10)),
-                borderSide: BorderSide(color: azulClaro, width: 2.0),
-              ),
-              focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(10)),
-                borderSide: BorderSide(color: azulClaro, width: 2.0),
-              ),
-              enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(10)),
-                borderSide: BorderSide(color: azulClaro, width: 2.0),
-              ),
-              errorBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(10)),
-                borderSide: BorderSide(color: azulClaro, width: 2.0),
-              ),
-              focusedErrorBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(10)),
-                borderSide: BorderSide(color: azulClaro, width: 2.0),
-              ),
-            ),
+            decoration: CustomStyles.inputDecoration.copyWith(
+                labelText: 'Contraseña', fillColor: const Color(0xFF003459)),
           ),
         ),
-        const SizedBox(height: 20),
+        const SizedBox(height: 15),
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
@@ -134,7 +89,7 @@ class LoginScreenContent extends StatelessWidget {
             ),
           ],
         ),
-        const SizedBox(height: 20),
+        const SizedBox(height: 15),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 30),
           child: ElevatedButton(
