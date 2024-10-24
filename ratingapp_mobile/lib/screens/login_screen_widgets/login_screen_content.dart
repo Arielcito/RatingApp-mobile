@@ -19,12 +19,6 @@ class LoginScreenContent extends StatelessWidget {
           ),
         ]);
 
-    const textStyle16 = TextStyle(
-        color: Colors.white,
-        fontSize: 16,
-        fontWeight: FontWeight.w400,
-        fontFamily: 'Poppins');
-
     const textStyle20 = TextStyle(
         color: Colors.white,
         fontSize: 20,
