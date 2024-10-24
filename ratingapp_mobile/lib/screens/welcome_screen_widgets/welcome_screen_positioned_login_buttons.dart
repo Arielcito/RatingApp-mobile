@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ratingapp_mobile/screens/login_screen.dart';
+
 class WelcomeScreenPositionedLoginButtons extends StatelessWidget {
   const WelcomeScreenPositionedLoginButtons({
     super.key,
@@ -8,7 +8,7 @@ class WelcomeScreenPositionedLoginButtons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const textStyle = TextStyle(
-        color: Colors.white, fontWeight: FontWeight.w500, fontSize: 20);
+        color: Colors.white, fontWeight: FontWeight.w600, fontSize: 20);
     return Positioned(
       bottom: 60,
       left: 0,
