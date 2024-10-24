@@ -31,7 +31,9 @@ class WelcomeScreenPositionedLoginButtons extends StatelessWidget {
           ),
           const SizedBox(height: 20),
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, '/register');
+            },
             child: const Text('Registrarse', style: textStyle),
           ),
         ],
