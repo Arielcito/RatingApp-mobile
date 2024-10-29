@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ratingapp_mobile/screens/main_screen.dart';
 import 'package:ratingapp_mobile/screens/welcome_screen.dart';
 import 'package:ratingapp_mobile/screens/login_screen.dart';
 import 'package:ratingapp_mobile/screens/register_screen.dart';
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
         "/": (context) => const WelcomeScreen(),
         "/login": (context) => const LoginScreen(),
         "/register": (context) => const RegisterScreen(),
+        "/main": (context) => const MainScreen(),
       },
     );
   }

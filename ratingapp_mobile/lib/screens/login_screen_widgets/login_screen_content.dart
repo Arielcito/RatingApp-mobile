@@ -87,7 +87,9 @@ class LoginScreenContent extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 30),
           child: ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, '/main');
+            },
             style: ElevatedButton.styleFrom(
               backgroundColor: const Color(0xFF00A5E0),
               shape: RoundedRectangleBorder(
@@ -108,6 +110,7 @@ class LoginScreenContent extends StatelessWidget {
               ),
             ),
           ),
+
         ),
         const SizedBox(height: 20),
         Column(
@@ -141,12 +144,12 @@ class LoginScreenContent extends StatelessWidget {
             const SizedBox(height: 20),
             const Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                Image(
+              children: [
+                const Image(
                     image: AssetImage(
                         'assets/images/login_screen/logos_facebook.png')),
-                SizedBox(width: 25),
-                Image(
+                const SizedBox(width: 25),
+                const Image(
                     image: AssetImage(
                         'assets/images/login_screen/devicon_google.png')),
               ],

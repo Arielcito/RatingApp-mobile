@@ -57,4 +57,7 @@ class CustomStyles {
       fontSize: 14,
       fontWeight: FontWeight.w600,
       fontFamily: 'Poppins');
+
+  static Color colorDeepBlue = const Color(0xFF003459);
+  
 }
