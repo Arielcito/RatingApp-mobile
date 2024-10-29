@@ -58,6 +58,8 @@ class CustomStyles {
       fontWeight: FontWeight.w600,
       fontFamily: 'Poppins');
 
+  static Color colorBlack = const Color(0xFF131313);
+  static Color colorWhite = const Color(0xFFF0F4F8);
   static Color colorDeepBlue = const Color(0xFF003459);
-  
+
 }

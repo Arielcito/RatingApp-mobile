@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ratingapp_mobile/screens/custom_styles.dart';
 import 'package:ratingapp_mobile/screens/welcome_screen_widgets/welcome_screen_top_stack.dart';
 import 'package:ratingapp_mobile/screens/welcome_screen_widgets/welcome_screen_center.dart';
 import 'package:ratingapp_mobile/screens/welcome_screen_widgets/welcome_screen_bottom_stack.dart';
@@ -10,12 +11,10 @@ class WelcomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const ratingAppBlack = Color(0xFF131313);
-
     return Scaffold(
       appBar: const AppBarWidget(),
       body: Container(
-        color: ratingAppBlack,
+        color: CustomStyles.colorBlack,
         child: const SizedBox.expand(
           child: Stack(
             children: [

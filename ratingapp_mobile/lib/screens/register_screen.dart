@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ratingapp_mobile/screens/custom_styles.dart';
 import 'package:ratingapp_mobile/screens/register_screen_widgets/register_screen_content.dart';
 import 'package:ratingapp_mobile/screens/register_screen_widgets/register_screen_top_stack.dart';
 import 'package:ratingapp_mobile/screens/register_screen_widgets/register_screen_bottom.dart';
@@ -9,13 +10,11 @@ class RegisterScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const ratingAppBlack = Color(0xFF131313);
-
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: const AppBarWidget(),
       body: Container(
-        color: ratingAppBlack,
+        color: CustomStyles.colorBlack,
         child: const SizedBox.expand(
           child: Stack(
             children: [
@@ -29,4 +28,3 @@ class RegisterScreen extends StatelessWidget {
     );
   }
 }
-
