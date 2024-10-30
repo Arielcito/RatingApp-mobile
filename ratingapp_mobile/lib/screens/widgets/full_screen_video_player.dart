@@ -16,6 +16,7 @@ class FullScreenVideoPlayer extends StatefulWidget {
 class _FullScreenVideoPlayerState extends State<FullScreenVideoPlayer> {
   bool _controlsVisible = false;
   bool _videoDimmed = false;
+  bool _listContainerVisible = false; // Estado para el contenedor gris
 
   void _toggleControls() {
     setState(() {
@@ -32,6 +33,12 @@ class _FullScreenVideoPlayerState extends State<FullScreenVideoPlayer> {
         });
       });
     }
+  }
+
+  void _toggleListContainer() {
+    setState(() {
+      _listContainerVisible = !_listContainerVisible; // Cambia la visibilidad del contenedor
+    });
   }
 
   void _rewind() {
@@ -176,7 +183,19 @@ class _FullScreenVideoPlayerState extends State<FullScreenVideoPlayer> {
                 ),
               ),
             ),
-            const Spacer(),
+            const SizedBox(height: 30),
+            // Contenedor gris que aparece debajo del Spacer
+            if (_listContainerVisible)
+              Container(
+                color: Colors.grey,
+                height: 100, // Altura del contenedor gris
+                child: const Center(
+                  child: Text(
+                    'Contenido de la lista',
+                    style: TextStyle(color: Colors.black),
+                  ),
+                ),
+              ),
           ],
         ),
       ),
@@ -188,7 +207,7 @@ class _FullScreenVideoPlayerState extends State<FullScreenVideoPlayer> {
           children: [
             IconButton(
               icon: const Icon(Icons.list, color: Colors.white),
-              onPressed: () {},
+              onPressed: _toggleListContainer, // Llama al método para alternar la visibilidad
             ),
             IconButton(
               icon: const Icon(Icons.replay_5, color: Colors.white),
