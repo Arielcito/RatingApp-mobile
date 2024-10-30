@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:ratingapp_mobile/screens/main_screen.dart';
 import 'package:ratingapp_mobile/screens/welcome_screen.dart';
 import 'package:ratingapp_mobile/screens/login_screen.dart';
@@ -11,6 +12,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations(
+            [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown])
+        .then((_) {
+      runApp(const MyApp());
+    });
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Rating App',
@@ -24,4 +30,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
