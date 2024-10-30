@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ratingapp_mobile/screens/custom_styles.dart';
 import 'package:ratingapp_mobile/screens/main_screen_widgets/main_screen_banner_widget.dart';
 import 'package:ratingapp_mobile/screens/widgets/main_bottom_bar_widget.dart';
 import 'package:video_player/video_player.dart';
@@ -16,7 +17,8 @@ class FullScreenVideoPlayer extends StatefulWidget {
 class _FullScreenVideoPlayerState extends State<FullScreenVideoPlayer> {
   bool _controlsVisible = false;
   bool _videoDimmed = false;
-  bool _listContainerVisible = false; // Estado para el contenedor gris
+  bool _showContainer = false; // Nueva variable para mostrar el contenedor
+  String? _selectedOption; // Variable para el RadioButton
 
   void _toggleControls() {
     setState(() {
@@ -35,12 +37,6 @@ class _FullScreenVideoPlayerState extends State<FullScreenVideoPlayer> {
     }
   }
 
-  void _toggleListContainer() {
-    setState(() {
-      _listContainerVisible = !_listContainerVisible; // Cambia la visibilidad del contenedor
-    });
-  }
-
   void _rewind() {
     final newPosition =
         widget.controller.value.position - const Duration(seconds: 5);
@@ -54,6 +50,12 @@ class _FullScreenVideoPlayerState extends State<FullScreenVideoPlayer> {
         widget.controller.value.position + const Duration(seconds: 5);
     widget.controller
         .seekTo(newPosition <= maxPosition ? newPosition : maxPosition);
+  }
+
+  void _toggleContainer() {
+    setState(() {
+      _showContainer = !_showContainer; // Cambiar la visibilidad del contenedor
+    });
   }
 
   @override
@@ -77,7 +79,8 @@ class _FullScreenVideoPlayerState extends State<FullScreenVideoPlayer> {
               onPressed: () {},
             ),
             IconButton(
-              icon: const Icon(Icons.emoji_events_outlined, color: Colors.white),
+              icon:
+                  const Icon(Icons.emoji_events_outlined, color: Colors.white),
               onPressed: () {},
             ),
           ],
@@ -183,16 +186,104 @@ class _FullScreenVideoPlayerState extends State<FullScreenVideoPlayer> {
                 ),
               ),
             ),
-            const SizedBox(height: 30),
-            // Contenedor gris que aparece debajo del Spacer
-            if (_listContainerVisible)
-              Container(
-                color: Colors.grey,
-                height: 100, // Altura del contenedor gris
-                child: const Center(
-                  child: Text(
-                    'Contenido de la lista',
-                    style: TextStyle(color: Colors.black),
+            if (_showContainer)
+              Padding(
+                padding: const EdgeInsets.all(30.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: const Color(0xFFD9D9D9),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  padding: const EdgeInsets.all(20.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        'Volverías a votar a Milei?',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w400,
+                          fontFamily: 'Poppins',
+                        ),
+                      ),
+                      const SizedBox(height: 10),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(8),
+                                color: Colors.grey,
+                              ),
+                              child: Row(
+                                children: [
+                                  Radio<String>(
+                                    value: 'si',
+                                    groupValue: _selectedOption,
+                                    onChanged: (value) {
+                                      setState(() {
+                                        _selectedOption = value;
+                                      });
+                                    },
+                                    materialTapTargetSize:
+                                        MaterialTapTargetSize.shrinkWrap,
+                                    activeColor: Colors.blue,
+                                  ),
+                                  const Text(
+                                    'Sí',
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w400,
+                                      fontFamily: 'Poppins',
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 10),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: Colors.grey,
+                              ),
+                              child: Row(
+                                children: [
+                                  Radio<String>(
+                                    value: 'mega_si',
+                                    groupValue: _selectedOption,
+                                    onChanged: (value) {
+                                      setState(() {
+                                        _selectedOption = value;
+                                      });
+                                    },
+                                    materialTapTargetSize:
+                                        MaterialTapTargetSize.shrinkWrap,
+                                    activeColor: Colors.blue,
+                                  ),
+                                  const Text(
+                                    'Recontra turbo mega sí',
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w400,
+                                      fontFamily: 'Poppins',
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
                 ),
               ),
@@ -201,13 +292,14 @@ class _FullScreenVideoPlayerState extends State<FullScreenVideoPlayer> {
       ),
       bottomNavigationBar: Container(
         color: Colors.black,
-        padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 32.0),
+        padding: const EdgeInsets.symmetric(horizontal: 32.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             IconButton(
               icon: const Icon(Icons.list, color: Colors.white),
-              onPressed: _toggleListContainer, // Llama al método para alternar la visibilidad
+              onPressed:
+                  _toggleContainer, // Cambia la visibilidad del contenedor
             ),
             IconButton(
               icon: const Icon(Icons.replay_5, color: Colors.white),
