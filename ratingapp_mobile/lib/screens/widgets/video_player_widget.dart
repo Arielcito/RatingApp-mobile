@@ -43,16 +43,13 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: _enterFullScreen, // Toca cualquier lugar del video para pantalla completa
-      child: SizedBox(
-        height: 300,
-        child: Center(
-          child: AspectRatio(
-            aspectRatio: _controller.value.aspectRatio,
-            child: _controller.value.isInitialized
-                ? VideoPlayer(_controller)
-                : Container(),
-          ),
+      onTap: _enterFullScreen,
+      child: Center(
+        child: AspectRatio(
+          aspectRatio: _controller.value.aspectRatio,
+          child: _controller.value.isInitialized
+              ? VideoPlayer(_controller)
+              : Container(),
         ),
       ),
     );
