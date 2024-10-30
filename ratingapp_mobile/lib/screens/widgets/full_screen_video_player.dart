@@ -61,6 +61,26 @@ class _FullScreenVideoPlayerState extends State<FullScreenVideoPlayer> {
             Navigator.pop(context);
           },
         ),
+        centerTitle: true,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            IconButton(
+              icon: const Icon(Icons.favorite, color: Colors.white),
+              onPressed: () {},
+            ),
+            IconButton(
+              icon: const Icon(Icons.emoji_events_outlined, color: Colors.white),
+              onPressed: () {},
+            ),
+          ],
+        ),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.cast, color: Colors.white),
+            onPressed: () {},
+          ),
+        ],
       ),
       body: GestureDetector(
         onTap: _toggleControls, // Detect taps to toggle controls
