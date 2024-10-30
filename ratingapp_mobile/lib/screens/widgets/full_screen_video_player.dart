@@ -35,14 +35,18 @@ class _FullScreenVideoPlayerState extends State<FullScreenVideoPlayer> {
   }
 
   void _rewind() {
-    final newPosition = widget.controller.value.position - const Duration(seconds: 5);
-    widget.controller.seekTo(newPosition >= Duration.zero ? newPosition : Duration.zero);
+    final newPosition =
+        widget.controller.value.position - const Duration(seconds: 5);
+    widget.controller
+        .seekTo(newPosition >= Duration.zero ? newPosition : Duration.zero);
   }
 
   void _fastForward() {
     final maxPosition = widget.controller.value.duration;
-    final newPosition = widget.controller.value.position + const Duration(seconds: 5);
-    widget.controller.seekTo(newPosition <= maxPosition ? newPosition : maxPosition);
+    final newPosition =
+        widget.controller.value.position + const Duration(seconds: 5);
+    widget.controller
+        .seekTo(newPosition <= maxPosition ? newPosition : maxPosition);
   }
 
   @override
@@ -83,11 +87,14 @@ class _FullScreenVideoPlayerState extends State<FullScreenVideoPlayer> {
                     // Video player with dim effect
                     ColorFiltered(
                       colorFilter: _videoDimmed
-                          ? const ColorFilter.mode(Colors.black54, BlendMode.darken)
-                          : const ColorFilter.mode(Colors.transparent, BlendMode.darken),
+                          ? const ColorFilter.mode(
+                              Colors.black54, BlendMode.darken)
+                          : const ColorFilter.mode(
+                              Colors.transparent, BlendMode.darken),
                       child: VideoPlayer(widget.controller),
                     ),
-                    if (widget.controller.value.isInitialized && _controlsVisible) ...[
+                    if (widget.controller.value.isInitialized &&
+                        _controlsVisible) ...[
                       Positioned(
                         bottom: 80,
                         left: 0,
@@ -96,28 +103,35 @@ class _FullScreenVideoPlayerState extends State<FullScreenVideoPlayer> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             IconButton(
-                              icon: const Icon(Icons.replay_5, color: Colors.white, size: 24),
+                              icon: const Icon(Icons.replay_5,
+                                  color: Colors.white, size: 24),
                               onPressed: _rewind,
                             ),
                             const SizedBox(width: 25),
                             ValueListenableBuilder(
                               valueListenable: widget.controller,
-                              builder: (context, VideoPlayerValue value, child) {
+                              builder:
+                                  (context, VideoPlayerValue value, child) {
                                 return IconButton(
                                   icon: Icon(
-                                    value.isPlaying ? Icons.pause : Icons.play_arrow,
+                                    value.isPlaying
+                                        ? Icons.pause
+                                        : Icons.play_arrow,
                                     color: Colors.white,
                                     size: 30,
                                   ),
                                   onPressed: () {
-                                    value.isPlaying ? widget.controller.pause() : widget.controller.play();
+                                    value.isPlaying
+                                        ? widget.controller.pause()
+                                        : widget.controller.play();
                                   },
                                 );
                               },
                             ),
                             const SizedBox(width: 25),
                             IconButton(
-                              icon: const Icon(Icons.forward_5, color: Colors.white, size: 24),
+                              icon: const Icon(Icons.forward_5,
+                                  color: Colors.white, size: 24),
                               onPressed: _fastForward,
                             ),
                           ],
@@ -143,50 +157,51 @@ class _FullScreenVideoPlayerState extends State<FullScreenVideoPlayer> {
               ),
             ),
             const Spacer(),
-            Container(
-              color: Colors.black,
-              padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 32.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  IconButton(
-                    icon: const Icon(Icons.list, color: Colors.white),
-                    onPressed: () {},
+          ],
+        ),
+      ),
+      bottomNavigationBar: Container(
+        color: Colors.black,
+        padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 32.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            IconButton(
+              icon: const Icon(Icons.list, color: Colors.white),
+              onPressed: () {},
+            ),
+            IconButton(
+              icon: const Icon(Icons.replay_5, color: Colors.white),
+              onPressed: _rewind,
+            ),
+            ValueListenableBuilder(
+              valueListenable: widget.controller,
+              builder: (context, VideoPlayerValue value, child) {
+                return IconButton(
+                  icon: Icon(
+                    value.isPlaying ? Icons.pause : Icons.play_arrow,
+                    color: Colors.white,
+                    size: 50,
                   ),
-                  IconButton(
-                    icon: const Icon(Icons.replay_5, color: Colors.white),
-                    onPressed: _rewind,
-                  ),
-                  ValueListenableBuilder(
-                    valueListenable: widget.controller,
-                    builder: (context, VideoPlayerValue value, child) {
-                      return IconButton(
-                        icon: Icon(
-                          value.isPlaying ? Icons.pause : Icons.play_arrow,
-                          color: Colors.white,
-                          size: 50,
-                        ),
-                        onPressed: () {
-                          value.isPlaying ? widget.controller.pause() : widget.controller.play();
-                        },
-                      );
-                    },
-                  ),
-                  IconButton(
-                    icon: const Icon(Icons.forward_5, color: Colors.white),
-                    onPressed: _fastForward,
-                  ),
-                  IconButton(
-                    icon: const Icon(Icons.favorite_border, color: Colors.white),
-                    onPressed: () {},
-                  ),
-                ],
-              ),
+                  onPressed: () {
+                    value.isPlaying
+                        ? widget.controller.pause()
+                        : widget.controller.play();
+                  },
+                );
+              },
+            ),
+            IconButton(
+              icon: const Icon(Icons.forward_5, color: Colors.white),
+              onPressed: _fastForward,
+            ),
+            IconButton(
+              icon: const Icon(Icons.favorite_border, color: Colors.white),
+              onPressed: () {},
             ),
           ],
         ),
       ),
-      bottomNavigationBar: const MainBottomBarWidget(currentIndex: 2),
     );
   }
 }
