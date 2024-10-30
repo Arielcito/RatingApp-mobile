@@ -121,7 +121,10 @@ class _FullScreenVideoPlayerState extends State<FullScreenVideoPlayer> {
                               Colors.black54, BlendMode.darken)
                           : const ColorFilter.mode(
                               Colors.transparent, BlendMode.darken),
-                      child: VideoPlayer(widget.controller),
+                      child: SizedBox(
+                        width: double.infinity,
+                        child: VideoPlayer(widget.controller),
+                      ),
                     ),
                     if (widget.controller.value.isInitialized &&
                         _controlsVisible) ...[
