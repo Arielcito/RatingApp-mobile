@@ -14,8 +14,6 @@ class FullScreenVideoPlayer extends StatefulWidget {
 class _FullScreenVideoPlayerState extends State<FullScreenVideoPlayer> {
   bool _controlsVisible = false;
   bool _videoDimmed = false;
-  bool _showContainer = false; // Nueva variable para mostrar el contenedor
-  String? _selectedOption; // Variable para el RadioButton
 
   void _toggleControls() {
     setState(() {
@@ -47,12 +45,6 @@ class _FullScreenVideoPlayerState extends State<FullScreenVideoPlayer> {
         widget.controller.value.position + const Duration(seconds: 5);
     widget.controller
         .seekTo(newPosition <= maxPosition ? newPosition : maxPosition);
-  }
-
-  void _toggleContainer() {
-    setState(() {
-      _showContainer = !_showContainer; // Cambiar la visibilidad del contenedor
-    });
   }
 
   @override
@@ -186,153 +178,148 @@ class _FullScreenVideoPlayerState extends State<FullScreenVideoPlayer> {
                 ),
               ),
             ),
-            if (_showContainer)
-              Padding(
-                padding: const EdgeInsets.all(30.0),
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: const Color(0xFFD9D9D9),
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  padding: const EdgeInsets.all(20.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Text(
-                        'Volverías a votar a Milei?',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w400,
-                          fontFamily: 'Poppins',
+            Padding(
+              padding: const EdgeInsets.all(30.0),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: const Color(0xFFD9D9D9),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                padding: const EdgeInsets.all(20.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      'Volverías a votar a Milei?',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w400,
+                        fontFamily: 'Poppins',
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8),
+                              color: Colors.grey,
+                            ),
+                            child: Row(
+                              children: [
+                                Radio<String>(
+                                  value: 'si',
+                                  groupValue: null,
+                                  onChanged: (value) {},
+                                  materialTapTargetSize:
+                                      MaterialTapTargetSize.shrinkWrap,
+                                  activeColor: Colors.blue,
+                                ),
+                                const Text(
+                                  'Sí',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w400,
+                                    fontFamily: 'Poppins',
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
                         ),
-                      ),
-                      const SizedBox(height: 10),
-                      Row(
-                        children: [
-                          Expanded(
-                            child: Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(8),
-                                color: Colors.grey,
-                              ),
-                              child: Row(
-                                children: [
-                                  Radio<String>(
-                                    value: 'si',
-                                    groupValue: _selectedOption,
-                                    onChanged: (value) {
-                                      setState(() {
-                                        _selectedOption = value;
-                                      });
-                                    },
-                                    materialTapTargetSize:
-                                        MaterialTapTargetSize.shrinkWrap,
-                                    activeColor: Colors.blue,
+                      ],
+                    ),
+                    const SizedBox(height: 10),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: Colors.grey,
+                            ),
+                            child: Row(
+                              children: [
+                                Radio<String>(
+                                  value: 'mega_si',
+                                  groupValue: null,
+                                  onChanged: (value) {},
+                                  materialTapTargetSize:
+                                      MaterialTapTargetSize.shrinkWrap,
+                                  activeColor: Colors.blue,
+                                ),
+                                const Text(
+                                  'Recontra turbo mega sí',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w400,
+                                    fontFamily: 'Poppins',
                                   ),
-                                  const Text(
-                                    'Sí',
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w400,
-                                      fontFamily: 'Poppins',
-                                    ),
-                                  ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
                           ),
-                        ],
-                      ),
-                      const SizedBox(height: 10),
-                      Row(
-                        children: [
-                          Expanded(
-                            child: Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Colors.grey,
-                              ),
-                              child: Row(
-                                children: [
-                                  Radio<String>(
-                                    value: 'mega_si',
-                                    groupValue: _selectedOption,
-                                    onChanged: (value) {
-                                      setState(() {
-                                        _selectedOption = value;
-                                      });
-                                    },
-                                    materialTapTargetSize:
-                                        MaterialTapTargetSize.shrinkWrap,
-                                    activeColor: Colors.blue,
-                                  ),
-                                  const Text(
-                                    'Recontra turbo mega sí',
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w400,
-                                      fontFamily: 'Poppins',
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
               ),
+            ),
           ],
         ),
       ),
-      bottomNavigationBar: Container(
-        color: Colors.black,
-        padding: const EdgeInsets.symmetric(horizontal: 32.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            IconButton(
-              icon: const Icon(Icons.list, color: Colors.white),
-              onPressed:
-                  _toggleContainer, // Cambia la visibilidad del contenedor
-            ),
-            IconButton(
-              icon: const Icon(Icons.replay_5, color: Colors.white),
-              onPressed: _rewind,
-            ),
-            ValueListenableBuilder(
-              valueListenable: widget.controller,
-              builder: (context, VideoPlayerValue value, child) {
-                return IconButton(
-                  icon: Icon(
-                    value.isPlaying ? Icons.pause : Icons.play_arrow,
-                    color: Colors.white,
-                    size: 50,
-                  ),
-                  onPressed: () {
-                    value.isPlaying
-                        ? widget.controller.pause()
-                        : widget.controller.play();
-                  },
-                );
-              },
-            ),
-            IconButton(
-              icon: const Icon(Icons.forward_5, color: Colors.white),
-              onPressed: _fastForward,
-            ),
-            IconButton(
-              icon: const Icon(Icons.favorite_border, color: Colors.white),
-              onPressed: () {},
-            ),
-          ],
-        ),
+      bottomNavigationBar: _controls(),
+    );
+  }
+
+  Widget _controls() {
+    return Container(
+      color: Colors.black,
+      padding: const EdgeInsets.symmetric(horizontal: 32.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          IconButton(
+            icon: const Icon(Icons.list, color: Colors.white),
+            onPressed: () {},
+          ),
+          IconButton(
+            icon: const Icon(Icons.replay_5, color: Colors.white),
+            onPressed: _rewind,
+          ),
+          ValueListenableBuilder(
+            valueListenable: widget.controller,
+            builder: (context, VideoPlayerValue value, child) {
+              return IconButton(
+                icon: Icon(
+                  value.isPlaying ? Icons.pause : Icons.play_arrow,
+                  color: Colors.white,
+                  size: 50,
+                ),
+                onPressed: () {
+                  value.isPlaying
+                      ? widget.controller.pause()
+                      : widget.controller.play();
+                },
+              );
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.forward_5, color: Colors.white),
+            onPressed: _fastForward,
+          ),
+          IconButton(
+            icon: const Icon(Icons.favorite_border, color: Colors.white),
+            onPressed: () {},
+          ),
+        ],
       ),
     );
   }
 }
+
