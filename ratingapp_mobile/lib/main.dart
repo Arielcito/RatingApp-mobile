@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:ratingapp_mobile/screens/channels_screen.dart';
 import 'package:ratingapp_mobile/screens/main_screen.dart';
+import 'package:ratingapp_mobile/screens/radio_screen.dart';
 import 'package:ratingapp_mobile/screens/welcome_screen.dart';
 import 'package:ratingapp_mobile/screens/login_screen.dart';
 import 'package:ratingapp_mobile/screens/register_screen.dart';
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
         "/register": (context) => const RegisterScreen(),
         "/home": (context) => const MainScreen(),
         "/channels": (context) => const ChannelsScreen(),
+        "/radio": (context) => const RadioScreen(),
       },
     );
   }

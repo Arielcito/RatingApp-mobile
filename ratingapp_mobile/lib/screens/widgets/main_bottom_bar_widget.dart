@@ -40,7 +40,7 @@ class MainBottomBarWidget extends StatelessWidget {
             _NavBarButton(
               icon: Icons.radio_outlined,
               isSelected: currentIndex == 1,
-              onTap: () => Navigator.pushNamed(context, '/home'),
+              onTap: () => Navigator.pushNamed(context, '/radio'),
             ),
             _NavBarButton(
               icon: Icons.home,
