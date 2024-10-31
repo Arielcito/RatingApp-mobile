@@ -35,7 +35,7 @@ class MainScreenVideoWidget extends StatelessWidget {
           const SizedBox(height: 10),
           ClipRRect(
             borderRadius: BorderRadius.circular(10),
-            child: VideoPlayerWidget(),
+            child: const VideoPlayerWidget(),
           ),
         ],
       ),

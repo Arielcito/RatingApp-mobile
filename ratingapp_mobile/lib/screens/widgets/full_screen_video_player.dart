@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ratingapp_mobile/screens/main_screen_widgets/main_screen_banner_widget.dart';
+import 'package:ratingapp_mobile/screens/widgets/banner_widget.dart';
 import 'package:ratingapp_mobile/screens/widgets/secondary_app_bar_widget.dart';
 import 'package:video_player/video_player.dart';
 
@@ -57,7 +57,10 @@ class _FullScreenVideoPlayerState extends State<FullScreenVideoPlayer> {
         onTap: _toggleControls, // Detect taps to toggle controls
         child: Column(
           children: [
-            const MainScreenBannerWidget(),
+            const BannerWidget(
+              banner: 'assets/images/sample_banner.png',
+              height: 160,
+            ),
             const SizedBox(height: 30),
             const Text(
               'Telefé',

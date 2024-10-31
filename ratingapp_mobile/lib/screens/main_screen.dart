@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ratingapp_mobile/screens/custom_styles.dart';
-import 'package:ratingapp_mobile/screens/main_screen_widgets/main_screen_banner_widget.dart';
+import 'package:ratingapp_mobile/screens/widgets/banner_widget.dart';
 import 'package:ratingapp_mobile/screens/main_screen_widgets/main_screen_video_widget.dart';
 import 'package:ratingapp_mobile/screens/main_screen_widgets/radio_icons_grid.dart';
 
@@ -19,7 +19,10 @@ class MainScreen extends StatelessWidget {
           color: CustomStyles.colorDeepBlue,
           child: const Column(
             children: [
-              MainScreenBannerWidget(),
+              BannerWidget(
+                banner: 'assets/images/sample_banner.png',
+                height: 160,
+              ),
               MainScreenVideoWidget(),
               SizedBox(height: 10),
               RadioIconsGrid(),

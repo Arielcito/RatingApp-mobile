@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ratingapp_mobile/screens/custom_styles.dart';
-import 'package:ratingapp_mobile/screens/main_screen_widgets/main_screen_banner_widget.dart';
+import 'package:ratingapp_mobile/screens/widgets/banner_widget.dart';
 
 import 'package:ratingapp_mobile/screens/widgets/main_bottom_bar_widget.dart';
 import 'package:ratingapp_mobile/screens/widgets/player_controls.dart';
@@ -17,7 +17,10 @@ class RadioScreen extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          const MainScreenBannerWidget(),
+          const BannerWidget(
+            banner: 'assets/images/sample_banner.png',
+            height: 160,
+          ),
           const SizedBox(height: 20),
           const Text(
             'Radio La Plata',
