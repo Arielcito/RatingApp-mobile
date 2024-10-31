@@ -3,7 +3,7 @@ import 'package:ratingapp_mobile/screens/widgets/full_screen_video_player.dart';
 import 'package:video_player/video_player.dart';
 
 class VideoPlayerWidget extends StatefulWidget {
-  VideoPlayerWidget({Key? key}) : super(key: key);
+  const VideoPlayerWidget({super.key});
 
   @override
   _VideoPlayerWidgetState createState() => _VideoPlayerWidgetState();

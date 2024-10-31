@@ -145,11 +145,11 @@ class LoginScreenContent extends StatelessWidget {
             const Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Image(
+                Image(
                     image: AssetImage(
                         'assets/images/login_screen/logos_facebook.png')),
-                const SizedBox(width: 25),
-                const Image(
+                SizedBox(width: 25),
+                Image(
                     image: AssetImage(
                         'assets/images/login_screen/devicon_google.png')),
               ],
