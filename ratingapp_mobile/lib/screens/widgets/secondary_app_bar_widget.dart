@@ -26,7 +26,9 @@ class SecondaryAppBarWidget extends StatelessWidget
           ),
           IconButton(
             icon: const Icon(Icons.emoji_events_outlined, color: Colors.white),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, '/benefits');
+            },
           ),
         ],
       ),

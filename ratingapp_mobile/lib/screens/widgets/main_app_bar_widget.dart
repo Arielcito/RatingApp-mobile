@@ -35,7 +35,9 @@ class MainAppBarWidget extends StatelessWidget implements PreferredSizeWidget {
                 ),
                 const SizedBox(width: 10),
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/benefits');
+                  },
                   icon: const Icon(Icons.emoji_events_outlined),
                   iconSize: 45,
                   color: Colors.yellow,
