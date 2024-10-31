@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ratingapp_mobile/screens/main_screen_widgets/main_screen_banner_widget.dart';
+import 'package:ratingapp_mobile/screens/widgets/secondary_app_bar_widget.dart';
 import 'package:video_player/video_player.dart';
 
 class FullScreenVideoPlayer extends StatefulWidget {
@@ -51,36 +52,7 @@ class _FullScreenVideoPlayerState extends State<FullScreenVideoPlayer> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
-        centerTitle: true,
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            IconButton(
-              icon: const Icon(Icons.favorite, color: Colors.white),
-              onPressed: () {},
-            ),
-            IconButton(
-              icon:
-                  const Icon(Icons.emoji_events_outlined, color: Colors.white),
-              onPressed: () {},
-            ),
-          ],
-        ),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.cast, color: Colors.white),
-            onPressed: () {},
-          ),
-        ],
-      ),
+      appBar: const SecondaryAppBarWidget(),
       body: GestureDetector(
         onTap: _toggleControls, // Detect taps to toggle controls
         child: Column(
@@ -286,7 +258,9 @@ class _FullScreenVideoPlayerState extends State<FullScreenVideoPlayer> {
         children: [
           IconButton(
             icon: const Icon(Icons.list, color: Colors.white),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, '/channels');
+            },
           ),
           IconButton(
             icon: const Icon(Icons.replay_5, color: Colors.white),
@@ -322,4 +296,3 @@ class _FullScreenVideoPlayerState extends State<FullScreenVideoPlayer> {
     );
   }
 }
-
