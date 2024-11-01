@@ -23,6 +23,7 @@ class MainScreen extends StatelessWidget {
                 banner: 'assets/images/sample_banner.png',
                 height: 160,
               ),
+              SizedBox(height: 10),
               MainScreenVideoWidget(),
               SizedBox(height: 10),
               RadioIconsGrid(),

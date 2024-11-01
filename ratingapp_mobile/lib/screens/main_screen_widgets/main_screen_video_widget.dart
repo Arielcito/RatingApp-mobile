@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ratingapp_mobile/screens/widgets/video_player_widget.dart';
+import 'package:ratingapp_mobile/screens/widgets/web_view_widget.dart';
 
 class MainScreenVideoWidget extends StatelessWidget {
   const MainScreenVideoWidget({
@@ -33,9 +33,21 @@ class MainScreenVideoWidget extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 10),
-          ClipRRect(
-            borderRadius: BorderRadius.circular(10),
-            child: const VideoPlayerWidget(),
+          GestureDetector(
+            onLongPress: () {
+              Navigator.pushNamed(context, '/fullScreenVideoPlayer');
+            },
+            child: Container(
+              width: double.infinity,
+              height: 200,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: WebViewWidgetExample(),
+              ),
+            ),
           ),
         ],
       ),

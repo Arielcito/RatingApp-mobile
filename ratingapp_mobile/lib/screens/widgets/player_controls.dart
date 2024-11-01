@@ -13,7 +13,9 @@ class PlayerControls extends StatelessWidget {
         children: [
           IconButton(
             icon: const Icon(Icons.list, color: Colors.white),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, '/channels');
+            },
           ),
           IconButton(
             icon: const Icon(Icons.replay_5, color: Colors.white),
