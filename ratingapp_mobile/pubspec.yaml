@@ -60,6 +60,7 @@ flutter:
   assets:
     - assets/images/
     - assets/images/welcome_screen/
+    - assets/images/user_screen/
     - assets/images/login_screen/
     - assets/images/register_screen/
     - assets/images/benefits_screen/

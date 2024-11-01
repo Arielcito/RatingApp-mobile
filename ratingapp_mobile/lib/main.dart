@@ -4,6 +4,7 @@ import 'package:ratingapp_mobile/screens/benefits_screen.dart';
 import 'package:ratingapp_mobile/screens/channels_screen.dart';
 import 'package:ratingapp_mobile/screens/main_screen.dart';
 import 'package:ratingapp_mobile/screens/radio_screen.dart';
+import 'package:ratingapp_mobile/screens/user_screen.dart';
 import 'package:ratingapp_mobile/screens/welcome_screen.dart';
 import 'package:ratingapp_mobile/screens/login_screen.dart';
 import 'package:ratingapp_mobile/screens/register_screen.dart';
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget {
         "/channels": (context) => const ChannelsScreen(),
         "/radio": (context) => const RadioScreen(),
         "/benefits": (context) => const BenefitsScreen(),
+        "/user": (context) => const UserScreen(),
       },
     );
   }

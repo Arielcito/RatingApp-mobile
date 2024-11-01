@@ -46,7 +46,9 @@ class MainAppBarWidget extends StatelessWidget implements PreferredSizeWidget {
                 ),
                 const SizedBox(width: 10),
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushNamed(context, '/user');
+                  },
                   child: const CircleAvatar(
                     radius: 30,
                     backgroundImage: AssetImage('assets/images/sample_pfp.jpg'),
