@@ -125,7 +125,9 @@ class LoginScreenContent extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/register');
+                  },
                   child: const Text(
                     'Regístrate.',
                     style: TextStyle(

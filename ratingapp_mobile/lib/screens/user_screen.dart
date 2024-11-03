@@ -11,18 +11,34 @@ class UserScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: CustomStyles.colorDeepBlue,
-      body: const Stack(
+      body: Stack(
         children: [
-          UserScreenTopStack(),
+          const UserScreenTopStack(),
           Align(
             alignment: Alignment.bottomCenter,
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 30),
+              padding: const EdgeInsets.symmetric(horizontal: 30),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  SizedBox(
+                    height: 50,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: (context, index) {
+                        return Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 5),
+                          child: Image.asset(
+                            'assets/images/icon-rating-app.png',
+                            height: 40,
+                            width: 40,
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                  const Text(
                     '¡Hola Linus!',
                     style: TextStyle(
                       color: Colors.white,
@@ -31,10 +47,10 @@ class UserScreen extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: 20),
-                  UserMenuButtons(),
-                  SizedBox(height: 20),
-                  Text(
+                  const SizedBox(height: 20),
+                  const UserMenuButtons(),
+                  const SizedBox(height: 20),
+                  const Text(
                     'Cerrar sesión',
                     style: TextStyle(
                       color: Colors.red,
@@ -42,7 +58,7 @@ class UserScreen extends StatelessWidget {
                       fontWeight: FontWeight.w400,
                     ),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                 ],
               ),
             ),

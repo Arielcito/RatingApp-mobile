@@ -66,6 +66,7 @@ flutter:
     - assets/images/register_screen/
     - assets/images/benefits_screen/
     - assets/videos/
+    - assets/images/icon-rating-app.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

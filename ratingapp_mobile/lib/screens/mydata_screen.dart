@@ -57,7 +57,7 @@ class _MyDataScreenState extends State<MyDataScreen> {
             const SizedBox(height: 15),
             _buildDatePicker(),
             const SizedBox(height: 15),
-            _buildInputField('Código de comunidad', '123456'),
+            _buildInputField('Código de comunidad', ''),
             const SizedBox(height: 30),
             _buildSaveButton(),
             const SizedBox(height: 20),

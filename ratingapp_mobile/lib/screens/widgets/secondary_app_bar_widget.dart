@@ -21,11 +21,11 @@ class SecondaryAppBarWidget extends StatelessWidget
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           IconButton(
-            icon: const Icon(Icons.favorite, color: Colors.white),
+            icon: const Icon(Icons.favorite, color: Colors.red),
             onPressed: () {},
           ),
           IconButton(
-            icon: const Icon(Icons.emoji_events_outlined, color: Colors.white),
+            icon: const Icon(Icons.emoji_events_outlined, color: Colors.yellow),
             onPressed: () {
               Navigator.pushNamed(context, '/benefits');
             },
