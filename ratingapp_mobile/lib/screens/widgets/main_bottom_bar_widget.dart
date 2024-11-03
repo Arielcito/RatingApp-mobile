@@ -35,7 +35,7 @@ class MainBottomBarWidget extends StatelessWidget {
             _NavBarButton(
               icon: Icons.monitor_outlined,
               isSelected: currentIndex == 0,
-              onTap: () => Navigator.pushNamed(context, '/home'),
+              onTap: () => Navigator.pushNamed(context, '/fullScreenVideoPlayer'),
             ),
             _NavBarButton(
               icon: Icons.radio_outlined,
@@ -50,12 +50,12 @@ class MainBottomBarWidget extends StatelessWidget {
             _NavBarButton(
               icon: Icons.wifi_tethering_outlined,
               isSelected: currentIndex == 3,
-              onTap: () => Navigator.pushNamed(context, '/home'),
+              onTap: () => Navigator.pushNamed(context, '/fullScreenVideoPlayer'),
             ),
             _NavBarButton(
               icon: Icons.description_outlined,
               isSelected: currentIndex == 4,
-              onTap: () => Navigator.pushNamed(context, '/home'),
+              onTap: () => Navigator.pushNamed(context, '/news'),
             ),
           ],
         ),

@@ -26,7 +26,9 @@ class MainAppBarWidget extends StatelessWidget implements PreferredSizeWidget {
                 ),
                 const SizedBox(width: 10),
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/favorites');
+                  },
                   icon: const Icon(Icons.favorite),
                   iconSize: 45,
                   color: Colors.red,

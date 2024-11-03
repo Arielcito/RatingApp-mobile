@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:ratingapp_mobile/screens/main_screen.dart';
+import 'package:ratingapp_mobile/screens/suggestions_screen.dart';
+import 'package:ratingapp_mobile/screens/mydata_screen.dart';
+import 'package:ratingapp_mobile/screens/membership_screen.dart';
+import 'package:ratingapp_mobile/screens/user_metrics_screen.dart';
 
 class UserMenuButtons extends StatelessWidget {
   const UserMenuButtons({super.key});
@@ -27,7 +32,12 @@ class UserMenuButtons extends StatelessWidget {
         SizedBox(
           width: double.infinity,
           child: ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => const MyDataScreen()),
+              );
+            },
             style: buttonStyle,
             child: const Align(
               alignment: Alignment.centerLeft,
@@ -39,7 +49,12 @@ class UserMenuButtons extends StatelessWidget {
         SizedBox(
           width: double.infinity,
           child: ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const UserMetricsScreen()),
+              );
+            },
             style: buttonStyle,
             child: const Align(
               alignment: Alignment.centerLeft,
@@ -51,7 +66,12 @@ class UserMenuButtons extends StatelessWidget {
         SizedBox(
           width: double.infinity,
           child: ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const SugerenciasScreen()),
+              );
+            },
             style: buttonStyle,
             child: const Align(
               alignment: Alignment.centerLeft,
@@ -81,7 +101,12 @@ class UserMenuButtons extends StatelessWidget {
         SizedBox(
           width: double.infinity,
           child: ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const MembershipScreen()),
+              );
+            },
             style: buttonStyle,
             child: const Align(
               alignment: Alignment.centerLeft,
