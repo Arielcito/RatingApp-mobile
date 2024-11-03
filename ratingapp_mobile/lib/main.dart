@@ -10,6 +10,8 @@ import 'package:ratingapp_mobile/screens/login_screen.dart';
 import 'package:ratingapp_mobile/screens/register_screen.dart';
 import 'package:ratingapp_mobile/screens/widgets/full_screen_video_player.dart';
 import 'package:ratingapp_mobile/screens/widgets/full_screen_web_view_player.dart';
+import 'package:ratingapp_mobile/screens/online_newspapers_screen.dart';
+import 'package:ratingapp_mobile/screens/favorites_screen.dart';
 
 void main() => runApp(const MyApp());
 
@@ -37,6 +39,8 @@ class MyApp extends StatelessWidget {
         "/benefits": (context) => const BenefitsScreen(),
         "/user": (context) => const UserScreen(),
         "/fullScreenVideoPlayer" : (context) => const FullScreenWebViewPlayer(),
+        "/news": (context) => const OnlineNewspapersScreen(),
+        '/favorites': (context) => const FavoritesScreen(),
       },
     );
   }
