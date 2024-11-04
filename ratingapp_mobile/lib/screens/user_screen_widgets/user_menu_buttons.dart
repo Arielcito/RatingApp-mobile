@@ -4,6 +4,7 @@ import 'package:ratingapp_mobile/screens/suggestions_screen.dart';
 import 'package:ratingapp_mobile/screens/mydata_screen.dart';
 import 'package:ratingapp_mobile/screens/membership_screen.dart';
 import 'package:ratingapp_mobile/screens/user_metrics_screen.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class UserMenuButtons extends StatelessWidget {
   const UserMenuButtons({super.key});
@@ -24,6 +25,13 @@ class UserMenuButtons extends StatelessWidget {
     padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
     textStyle: buttonTextStyle,
   );
+
+  Future<void> _launchURL() async {
+    final Uri url = Uri.parse('https://www.ratingapp.com.ar/terminos-y-condiciones');
+    if (!await launchUrl(url)) {
+      throw Exception('No se pudo abrir $url');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -130,7 +138,7 @@ class UserMenuButtons extends StatelessWidget {
         SizedBox(
           width: double.infinity,
           child: ElevatedButton(
-            onPressed: () {},
+            onPressed: _launchURL,
             style: buttonStyle,
             child: const Align(
               alignment: Alignment.centerLeft,
