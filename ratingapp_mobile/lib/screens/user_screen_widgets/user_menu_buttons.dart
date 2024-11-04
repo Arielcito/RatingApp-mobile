@@ -4,6 +4,7 @@ import 'package:ratingapp_mobile/screens/suggestions_screen.dart';
 import 'package:ratingapp_mobile/screens/mydata_screen.dart';
 import 'package:ratingapp_mobile/screens/membership_screen.dart';
 import 'package:ratingapp_mobile/screens/user_metrics_screen.dart';
+import 'package:ratingapp_mobile/screens/notifications_screen.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class UserMenuButtons extends StatelessWidget {
@@ -91,7 +92,12 @@ class UserMenuButtons extends StatelessWidget {
         SizedBox(
           width: double.infinity,
           child: ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const NotificationsScreen()),
+              );
+            },
             style: buttonStyle,
             child: const Align(
               alignment: Alignment.centerLeft,
