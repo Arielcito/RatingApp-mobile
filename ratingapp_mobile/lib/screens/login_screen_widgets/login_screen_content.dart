@@ -69,7 +69,9 @@ class LoginScreenContent extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30),
               child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, '/forgot-password');
+                },
                 child: const Text(
                   'Olvidaste tu contraseña?',
                   style: TextStyle(

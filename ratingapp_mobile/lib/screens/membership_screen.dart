@@ -85,6 +85,31 @@ class MembershipScreen extends StatelessWidget {
                   .toList(),
                 ),
               ),
+              const SizedBox(height: 20),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                child: ElevatedButton(
+                  onPressed: () {
+                    // Implementar lógica de selección de membresía
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: color,
+                    foregroundColor: Colors.white,
+                    padding: const EdgeInsets.symmetric(vertical: 15),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                  child: const Text(
+                    'Seleccionar Plan',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'Poppins',
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
           if (isPopular)
@@ -147,13 +172,15 @@ class MembershipScreen extends StatelessWidget {
           child: ListView(
             children: [
               _buildMembershipCard(
-                title: 'Básico',
-                price: '10.000 minutos',
-                color: Colors.blue,
+                title: 'Premium',
+                price: '30.000 minutos',
+                color: Colors.orange,
                 features: [
-                  'Acceso a funciones básicas',
-                  'Soporte por email',
-                  'Actualizaciones mensuales',
+                  'Todas las funciones Pro',
+                  'Soporte 24/7',
+                  'Características personalizadas',
+                  'Acceso anticipado a nuevas funciones',
+                  'Dashboard analítico',
                 ],
                 isPopular: false,
               ),
@@ -169,16 +196,14 @@ class MembershipScreen extends StatelessWidget {
                   'Sin anuncios',
                 ],
               ),
-              _buildMembershipCard(
-                title: 'Premium',
-                price: '30.000 minutos',
-                color: Colors.orange,
+               _buildMembershipCard(
+                title: 'Básico',
+                price: '10.000 minutos',
+                color: Colors.blue,
                 features: [
-                  'Todas las funciones Pro',
-                  'Soporte 24/7',
-                  'Características personalizadas',
-                  'Acceso anticipado a nuevas funciones',
-                  'Dashboard analítico',
+                  'Acceso a funciones básicas',
+                  'Soporte por email',
+                  'Actualizaciones mensuales',
                 ],
                 isPopular: false,
               ),
