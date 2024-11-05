@@ -3,7 +3,7 @@ import 'package:ratingapp_mobile/theme/custom_colors.dart';
 import 'package:ratingapp_mobile/ui/screens/welcome/widgets/login_buttons.dart';
 import 'package:ratingapp_mobile/ui/screens/welcome/widgets/logos_section.dart';
 import 'package:ratingapp_mobile/ui/screens/welcome/widgets/top_stack.dart';
-import 'package:ratingapp_mobile/ui/widgets/app_bar_widget.dart';
+import 'package:ratingapp_mobile/ui/widgets/app_bars/simple_app_bar.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -22,7 +22,7 @@ class WelcomeScreen extends StatelessWidget {
         size.width * 0.05; // 3% del ancho de la pantalla
 
     return Scaffold(
-      appBar: const AppBarWidget(),
+      appBar: const SimpleAppBar(),
       backgroundColor: CustomColors.blackBg,
       body: LayoutBuilder(
         builder: (context, constraints) {

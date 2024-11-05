@@ -4,7 +4,7 @@ import 'package:ratingapp_mobile/ui/widgets/banner_widget.dart';
 import 'package:ratingapp_mobile/ui/screens/main/widgets/main_screen_video_widget.dart';
 import 'package:ratingapp_mobile/ui/screens/main/widgets/radio_icons_grid.dart';
 
-import 'package:ratingapp_mobile/ui/widgets/main_app_bar_widget.dart';
+import 'package:ratingapp_mobile/ui/widgets/app_bars/main_app_bar.dart';
 import 'package:ratingapp_mobile/ui/widgets/main_bottom_bar_widget.dart';
 
 class MainScreen extends StatelessWidget {
@@ -13,7 +13,7 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const MainAppBarWidget(),
+      appBar: const MainAppBar(),
       body: SingleChildScrollView(
         child: Container(
           color: CustomStyles.colorDeepBlue,

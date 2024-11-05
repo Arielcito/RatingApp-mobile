@@ -1,11 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:ratingapp_mobile/theme/custom_styles.dart';
 
-class MainAppBarWidget extends StatelessWidget implements PreferredSizeWidget {
-  const MainAppBarWidget({super.key});
+class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const MainAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
+    // Obtenemos el ancho de la pantalla
+    final screenWidth = MediaQuery.of(context).size.width;
+
+    // Calculamos el tamaño de los íconos y la imagen del logo de manera proporcional
+    final iconSize =
+        screenWidth * 0.08; // Por ejemplo, 8% del ancho de la pantalla
+    final logoHeight = screenWidth *
+        0.12; // Aproximadamente 12% del ancho de pantalla para el logo
+    final avatarRadius = screenWidth * 0.06; // 6% del ancho para el avatar
+    final horizontalSpacing =
+        screenWidth * 0.02; // 2% de espacio horizontal entre íconos
+
     return AppBar(
       backgroundColor: CustomStyles.colorDeepBlue,
       elevation: 1,
@@ -14,51 +26,51 @@ class MainAppBarWidget extends StatelessWidget implements PreferredSizeWidget {
       flexibleSpace: Center(
         child: Column(
           children: [
-            const SizedBox(height: kToolbarHeight - 20),
+            const Spacer(),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Spacer(),
                 Image.asset(
                   'assets/images/rating_app_logo.png',
-                  height: 48,
+                  height: logoHeight,
                   fit: BoxFit.contain,
                 ),
-                const SizedBox(width: 10),
+                SizedBox(width: horizontalSpacing),
                 IconButton(
                   onPressed: () {
                     Navigator.pushNamed(context, '/favorites');
                   },
                   icon: const Icon(Icons.favorite),
-                  iconSize: 45,
+                  iconSize: iconSize,
                   color: Colors.red,
                   padding: EdgeInsets.zero,
                   constraints: const BoxConstraints(),
                 ),
-                const SizedBox(width: 10),
+                SizedBox(width: horizontalSpacing),
                 IconButton(
                   onPressed: () {
                     Navigator.pushNamed(context, '/benefits');
                   },
                   icon: const Icon(Icons.emoji_events_outlined),
-                  iconSize: 45,
+                  iconSize: iconSize,
                   color: Colors.yellow,
                   padding: EdgeInsets.zero,
                   constraints: const BoxConstraints(),
                 ),
-                const SizedBox(width: 10),
+                SizedBox(width: horizontalSpacing),
                 GestureDetector(
                   onTap: () {
                     Navigator.pushNamed(context, '/user');
                   },
-                  child: const CircleAvatar(
-                    radius: 30,
-                    backgroundImage: AssetImage('assets/images/sample_pfp.jpg'),
+                  child: CircleAvatar(
+                    radius: avatarRadius,
+                    backgroundImage:
+                        const AssetImage('assets/images/sample_pfp.jpg'),
                   ),
                 ),
-                const Spacer(),
               ],
             ),
+            const Spacer(),
           ],
         ),
       ),
@@ -66,5 +78,5 @@ class MainAppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight + 30);
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight + 16);
 }

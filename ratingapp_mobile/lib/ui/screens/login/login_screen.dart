@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ratingapp_mobile/theme/custom_colors.dart';
 import 'package:ratingapp_mobile/ui/screens/login/widgets/bottom_stack.dart';
 import 'package:ratingapp_mobile/ui/screens/login/widgets/top_stack.dart';
-import 'package:ratingapp_mobile/ui/widgets/app_bar_widget.dart';
+import 'package:ratingapp_mobile/ui/widgets/app_bars/simple_app_bar.dart';
 import 'package:ratingapp_mobile/ui/screens/login/widgets/content_section.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -22,7 +22,7 @@ class LoginScreen extends StatelessWidget {
         size.width * 0.04; // 4% del ancho de la pantalla
 
     return Scaffold(
-      appBar: const AppBarWidget(),
+      appBar: const SimpleAppBar(),
       backgroundColor: CustomColors.blackBg,
       body: LayoutBuilder(
         builder: (context, constraints) {
