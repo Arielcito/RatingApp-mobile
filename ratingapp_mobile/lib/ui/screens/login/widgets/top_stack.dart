@@ -12,7 +12,7 @@ class TopStack extends StatelessWidget {
         children: [
           Expanded(
             child: Image.asset(
-              'assets/images/login_screen/login_bottom_stack.png',
+              'assets/images/login_screen/login_top_stack.png',
               fit: BoxFit.fill,
             ),
           ),
