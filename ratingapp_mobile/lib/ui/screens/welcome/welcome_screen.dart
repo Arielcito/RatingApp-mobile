@@ -3,7 +3,7 @@ import 'package:ratingapp_mobile/theme/custom_colors.dart';
 import 'package:ratingapp_mobile/ui/screens/welcome/widgets/login_buttons.dart';
 import 'package:ratingapp_mobile/ui/screens/welcome/widgets/logos_section.dart';
 import 'package:ratingapp_mobile/ui/screens/welcome/widgets/top_stack.dart';
-import 'package:ratingapp_mobile/screens/widgets/app_bar_widget.dart';
+import 'package:ratingapp_mobile/ui/widgets/app_bar_widget.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});

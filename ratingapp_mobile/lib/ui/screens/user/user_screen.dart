@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ratingapp_mobile/screens/custom_styles.dart';
-import 'package:ratingapp_mobile/screens/user_screen_widgets/user_menu_buttons.dart';
-import 'package:ratingapp_mobile/screens/user_screen_widgets/user_screen_top_stack.dart';
-import 'package:ratingapp_mobile/screens/widgets/main_bottom_bar_widget.dart';
+import 'package:ratingapp_mobile/ui/screens/user/widgets/user_menu_buttons.dart';
+import 'package:ratingapp_mobile/ui/screens/user/widgets/user_screen_top_stack.dart';
+import 'package:ratingapp_mobile/ui/widgets/main_bottom_bar_widget.dart';
 
 class UserScreen extends StatelessWidget {
   const UserScreen({super.key});

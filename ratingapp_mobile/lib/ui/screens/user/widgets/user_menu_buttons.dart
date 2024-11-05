@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ratingapp_mobile/screens/main_screen.dart';
 import 'package:ratingapp_mobile/screens/suggestions_screen.dart';
 import 'package:ratingapp_mobile/screens/mydata_screen.dart';
 import 'package:ratingapp_mobile/screens/membership_screen.dart';

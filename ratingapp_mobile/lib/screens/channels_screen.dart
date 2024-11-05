@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ratingapp_mobile/screens/custom_styles.dart';
-import 'package:ratingapp_mobile/screens/widgets/secondary_app_bar_widget.dart';
+import 'package:ratingapp_mobile/ui/widgets/secondary_app_bar_widget.dart';
 
 class ChannelsScreen extends StatelessWidget {
   const ChannelsScreen({super.key});

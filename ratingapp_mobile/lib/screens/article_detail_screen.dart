@@ -18,7 +18,7 @@ class ArticleDetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Noticia'),
+        title: const Text('Noticia'),
         backgroundColor: CustomStyles.colorDeepBlue,
       ),
       body: SingleChildScrollView(

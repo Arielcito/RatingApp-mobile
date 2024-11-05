@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ratingapp_mobile/screens/widgets/web_view_widget.dart';
+import 'package:ratingapp_mobile/ui/widgets/web_view_widget.dart';
 
 class MainScreenVideoWidget extends StatelessWidget {
   const MainScreenVideoWidget({

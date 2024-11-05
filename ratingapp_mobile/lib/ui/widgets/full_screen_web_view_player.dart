@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:ratingapp_mobile/screens/widgets/banner_widget.dart';
-import 'package:ratingapp_mobile/screens/widgets/player_controls.dart';
-import 'package:ratingapp_mobile/screens/widgets/secondary_app_bar_widget.dart';
-import 'package:ratingapp_mobile/screens/widgets/web_view_widget.dart';
+import 'package:ratingapp_mobile/ui/widgets/banner_widget.dart';
+import 'package:ratingapp_mobile/ui/widgets/player_controls.dart';
+import 'package:ratingapp_mobile/ui/widgets/secondary_app_bar_widget.dart';
+import 'package:ratingapp_mobile/ui/widgets/web_view_widget.dart';
 
 class FullScreenWebViewPlayer extends StatelessWidget {
   const FullScreenWebViewPlayer({super.key});

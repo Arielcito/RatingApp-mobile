@@ -2,18 +2,18 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:ratingapp_mobile/screens/benefits_screen.dart';
+import 'package:ratingapp_mobile/ui/screens/benefits/benefits_screen.dart';
 import 'package:ratingapp_mobile/screens/channels_screen.dart';
-import 'package:ratingapp_mobile/screens/main_screen.dart';
+import 'package:ratingapp_mobile/ui/screens/main/main_screen.dart';
 import 'package:ratingapp_mobile/screens/radio_screen.dart';
-import 'package:ratingapp_mobile/screens/user_screen.dart';
+import 'package:ratingapp_mobile/ui/screens/user/user_screen.dart';
 import 'package:ratingapp_mobile/ui/screens/welcome/welcome_screen.dart';
-import 'package:ratingapp_mobile/screens/login_screen.dart';
-import 'package:ratingapp_mobile/screens/register_screen.dart';
-import 'package:ratingapp_mobile/screens/widgets/full_screen_web_view_player.dart';
+import 'package:ratingapp_mobile/ui/screens/login/login_screen.dart';
+import 'package:ratingapp_mobile/ui/screens/register/register_screen.dart';
+import 'package:ratingapp_mobile/ui/widgets/full_screen_web_view_player.dart';
 import 'package:ratingapp_mobile/screens/online_newspapers_screen.dart';
 import 'package:ratingapp_mobile/screens/favorites_screen.dart';
-import 'package:ratingapp_mobile/screens/forgot_password_screen.dart';
+import 'package:ratingapp_mobile/ui/screens/forgot_password/forgot_password_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class WebViewWidgetExample extends StatelessWidget {
-  WebViewWidgetExample({Key? key}) : super(key: key);
+  WebViewWidgetExample({super.key});
 
   final _controller = WebViewController()
     ..setJavaScriptMode(JavaScriptMode.unrestricted)

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:ratingapp_mobile/screens/custom_styles.dart';
-import 'package:ratingapp_mobile/screens/widgets/banner_widget.dart';
+import 'package:ratingapp_mobile/ui/widgets/banner_widget.dart';
 
-import 'package:ratingapp_mobile/screens/widgets/main_bottom_bar_widget.dart';
-import 'package:ratingapp_mobile/screens/widgets/player_controls.dart';
-import 'package:ratingapp_mobile/screens/widgets/secondary_app_bar_widget.dart';
+import 'package:ratingapp_mobile/ui/widgets/main_bottom_bar_widget.dart';
+import 'package:ratingapp_mobile/ui/widgets/player_controls.dart';
+import 'package:ratingapp_mobile/ui/widgets/secondary_app_bar_widget.dart';
 
 class RadioScreen extends StatelessWidget {
   const RadioScreen({super.key});

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ratingapp_mobile/screens/custom_styles.dart';
-import 'package:ratingapp_mobile/screens/widgets/main_app_bar_widget.dart';
-import 'package:ratingapp_mobile/screens/widgets/main_bottom_bar_widget.dart';
-import 'package:ratingapp_mobile/screens/widgets/newspaper_article_widget.dart';
+import 'package:ratingapp_mobile/ui/widgets/main_app_bar_widget.dart';
+import 'package:ratingapp_mobile/ui/widgets/main_bottom_bar_widget.dart';
+import 'package:ratingapp_mobile/ui/widgets/newspaper_article_widget.dart';
 
 class OnlineNewspapersScreen extends StatelessWidget {
   const OnlineNewspapersScreen({super.key});

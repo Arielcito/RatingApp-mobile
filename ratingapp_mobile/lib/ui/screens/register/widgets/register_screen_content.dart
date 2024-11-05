@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ratingapp_mobile/screens/custom_styles.dart';
-import 'package:ratingapp_mobile/screens/main_screen.dart';
+import 'package:ratingapp_mobile/ui/screens/main/main_screen.dart';
 
 class RegisterScreenContent extends StatefulWidget {
   const RegisterScreenContent({super.key});

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ratingapp_mobile/screens/benefits_screen_widgets/benefits_app_bar_widget.dart';
+import 'package:ratingapp_mobile/ui/screens/benefits/widgets/benefits_app_bar_widget.dart';
 import 'package:ratingapp_mobile/screens/custom_styles.dart';
-import 'package:ratingapp_mobile/screens/widgets/banner_widget.dart';
+import 'package:ratingapp_mobile/ui/widgets/banner_widget.dart';
 
 class BenefitsScreen extends StatelessWidget {
   const BenefitsScreen({super.key});
@@ -99,7 +99,7 @@ class MockupPrizeCard extends StatelessWidget {
 }
 
 class _BenefitsText extends StatelessWidget {
-  const _BenefitsText({super.key});
+  const _BenefitsText();
 
   @override
   Widget build(BuildContext context) {
