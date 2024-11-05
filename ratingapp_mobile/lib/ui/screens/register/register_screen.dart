@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ratingapp_mobile/screens/custom_styles.dart';
+import 'package:ratingapp_mobile/theme/custom_styles.dart';
 import 'package:ratingapp_mobile/ui/screens/register/widgets/register_screen_bottom.dart';
 import 'package:ratingapp_mobile/ui/screens/register/widgets/register_screen_content.dart';
 import 'package:ratingapp_mobile/ui/screens/register/widgets/register_screen_top_stack.dart';

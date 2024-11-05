@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ratingapp_mobile/screens/custom_styles.dart';
+import 'package:ratingapp_mobile/theme/custom_styles.dart';
 
 class ForgotPasswordScreenContent extends StatelessWidget {
   const ForgotPasswordScreenContent({super.key});

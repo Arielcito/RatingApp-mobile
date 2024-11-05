@@ -32,6 +32,9 @@ class CustomStyles {
       borderRadius: BorderRadius.all(Radius.circular(10)),
       borderSide: BorderSide(color: Color(0xFF003459), width: 2.0),
     ),
+    hintStyle: TextStyle(
+      color: Colors.white,
+    ),
   );
 
   static TextStyle textStyle30fwbold = const TextStyle(

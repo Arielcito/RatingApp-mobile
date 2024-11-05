@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ratingapp_mobile/screens/custom_styles.dart';
+import 'package:ratingapp_mobile/theme/custom_styles.dart';
 import 'package:ratingapp_mobile/theme/custom_colors.dart';
 import 'package:ratingapp_mobile/theme/custom_text_styles.dart';
 
@@ -61,6 +61,7 @@ class ContentSection extends StatelessWidget {
               TextField(
                 decoration:
                     CustomStyles.inputDecoration.copyWith(labelText: 'Email'),
+                style: bodyWhiteTextStyle,
               ),
               SizedBox(height: separatorVertical / 2),
               TextField(
@@ -68,6 +69,7 @@ class ContentSection extends StatelessWidget {
                 decoration: CustomStyles.inputDecoration.copyWith(
                     labelText: 'Contraseña',
                     fillColor: const Color(0xFF003459)),
+                style: bodyWhiteTextStyle,
               ),
               SizedBox(height: separatorVertical / 2),
               Row(
