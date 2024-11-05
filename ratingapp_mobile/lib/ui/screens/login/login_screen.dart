@@ -33,13 +33,13 @@ class LoginScreen extends StatelessWidget {
                 child: Stack(
                   children: [
                     const TopStack(),
+                    const BottomStack(),
                     ContentSection(
                       paddingHorizontal: paddingHorizontal,
                       separatorVertical: separatorVertical,
                       titleFontSize: titleFontSize,
                       subtitleFontSize: subtitleFontSize,
                     ),
-                    const BottomStack()
                   ],
                 ),
               ),

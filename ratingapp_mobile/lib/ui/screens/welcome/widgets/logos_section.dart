@@ -21,7 +21,6 @@ class LogosSection extends StatelessWidget {
     );
     return Column(
       children: [
-        SizedBox(height: separatorVertical),
         SizedBox(
           width: MediaQuery.of(context).size.width * 0.80,
           child: const Image(

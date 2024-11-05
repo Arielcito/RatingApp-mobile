@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ratingapp_mobile/theme/custom_colors.dart';
+import 'package:ratingapp_mobile/ui/screens/welcome/widgets/bottom_stack.dart';
 import 'package:ratingapp_mobile/ui/screens/welcome/widgets/login_buttons.dart';
 import 'package:ratingapp_mobile/ui/screens/welcome/widgets/logos_section.dart';
 import 'package:ratingapp_mobile/ui/screens/welcome/widgets/top_stack.dart';
@@ -32,6 +33,7 @@ class WelcomeScreen extends StatelessWidget {
               child: IntrinsicHeight(
                 child: Stack(
                   children: [
+                    const WelcomeBottomStack(),
                     Column(
                       children: [
                         const TopStack(),
@@ -47,16 +49,7 @@ class WelcomeScreen extends StatelessWidget {
                         ),
                         const Spacer(),
                       ],
-                    ),
-                    Positioned(
-                      bottom: 0,
-                      left: 0,
-                      child: Image.asset(
-                        'assets/images/welcome_screen/bottom_stack.png',
-                        fit: BoxFit.fill,
-                        width: size.width * 0.35,
-                      ),
-                    ),
+                    )
                   ],
                 ),
               ),
