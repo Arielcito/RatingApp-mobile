@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ratingapp_mobile/theme/custom_styles.dart';
-import 'package:ratingapp_mobile/ui/widgets/main_bottom_bar_widget.dart';
+import 'package:ratingapp_mobile/ui/widgets/app_bars/main_bottom_nav_bar.dart';
 
 class MyDataScreen extends StatefulWidget {
   const MyDataScreen({super.key});
@@ -64,7 +64,7 @@ class _MyDataScreenState extends State<MyDataScreen> {
           ],
         ),
       ),
-      bottomNavigationBar: const MainBottomBarWidget(currentIndex: -1),
+      bottomNavigationBar: const MainBottomNavBar(currentIndex: -1),
     );
   }
 

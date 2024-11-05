@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ratingapp_mobile/theme/custom_styles.dart';
 import 'package:ratingapp_mobile/ui/screens/user/widgets/user_menu_buttons.dart';
 import 'package:ratingapp_mobile/ui/screens/user/widgets/user_screen_top_stack.dart';
-import 'package:ratingapp_mobile/ui/widgets/main_bottom_bar_widget.dart';
+import 'package:ratingapp_mobile/ui/widgets/app_bars/main_bottom_nav_bar.dart';
 
 class UserScreen extends StatelessWidget {
   const UserScreen({super.key});
@@ -65,7 +65,7 @@ class UserScreen extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: const MainBottomBarWidget(currentIndex: -1),
+      bottomNavigationBar: const MainBottomNavBar(currentIndex: -1),
     );
   }
 }

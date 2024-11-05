@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ratingapp_mobile/theme/custom_styles.dart';
 import 'package:ratingapp_mobile/ui/widgets/app_bars/main_app_bar.dart';
-import 'package:ratingapp_mobile/ui/widgets/main_bottom_bar_widget.dart';
+import 'package:ratingapp_mobile/ui/widgets/app_bars/main_bottom_nav_bar.dart';
 
 class FavoritesScreen extends StatelessWidget {
   const FavoritesScreen({super.key});
@@ -10,7 +10,7 @@ class FavoritesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const MainAppBar(),
-      bottomNavigationBar: const MainBottomBarWidget(currentIndex: 2),
+      bottomNavigationBar: const MainBottomNavBar(currentIndex: 2),
       body: Container(
         color: Colors.grey[100],
         child: Column(

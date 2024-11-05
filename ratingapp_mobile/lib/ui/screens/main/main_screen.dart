@@ -5,7 +5,7 @@ import 'package:ratingapp_mobile/ui/screens/main/widgets/main_screen_video_widge
 import 'package:ratingapp_mobile/ui/screens/main/widgets/radio_icons_grid.dart';
 
 import 'package:ratingapp_mobile/ui/widgets/app_bars/main_app_bar.dart';
-import 'package:ratingapp_mobile/ui/widgets/main_bottom_bar_widget.dart';
+import 'package:ratingapp_mobile/ui/widgets/app_bars/main_bottom_nav_bar.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
@@ -32,7 +32,7 @@ class MainScreen extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: const MainBottomBarWidget(currentIndex: 2),
+      bottomNavigationBar: const MainBottomNavBar(currentIndex: 2),
     );
   }
 }

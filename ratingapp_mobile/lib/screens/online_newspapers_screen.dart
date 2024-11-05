@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ratingapp_mobile/theme/custom_styles.dart';
 import 'package:ratingapp_mobile/ui/widgets/app_bars/main_app_bar.dart';
-import 'package:ratingapp_mobile/ui/widgets/main_bottom_bar_widget.dart';
+import 'package:ratingapp_mobile/ui/widgets/app_bars/main_bottom_nav_bar.dart';
 import 'package:ratingapp_mobile/ui/widgets/newspaper_article_widget.dart';
 
 class OnlineNewspapersScreen extends StatelessWidget {
@@ -44,7 +44,7 @@ class OnlineNewspapersScreen extends StatelessWidget {
           },
         ),
       ),
-      bottomNavigationBar: const MainBottomBarWidget(currentIndex: 4),
+      bottomNavigationBar: const MainBottomNavBar(currentIndex: 4),
     );
   }
 } 
