@@ -26,7 +26,7 @@ class LogosSection extends StatelessWidget {
           width: MediaQuery.of(context).size.width * 0.80,
           child: const Image(
             image:
-                AssetImage('assets/images/welcome_screen/rating_app_logo.png'),
+                AssetImage('assets/images/rating_app_logo.png'),
             fit: BoxFit.contain,
           ),
         ),
