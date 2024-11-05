@@ -1,3 +1,5 @@
+import 'package:device_preview/device_preview.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:ratingapp_mobile/screens/benefits_screen.dart';
@@ -13,18 +15,26 @@ import 'package:ratingapp_mobile/screens/online_newspapers_screen.dart';
 import 'package:ratingapp_mobile/screens/favorites_screen.dart';
 import 'package:ratingapp_mobile/screens/forgot_password_screen.dart';
 
-void main() => runApp(const MyApp());
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]).then((_) {
+    runApp(
+      DevicePreview(
+        enabled: kDebugMode,
+        builder: (context) => const MyApp(),
+      ),
+    );
+  });
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setPreferredOrientations(
-            [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown])
-        .then((_) {
-      runApp(const MyApp());
-    });
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Rating App',
@@ -38,7 +48,7 @@ class MyApp extends StatelessWidget {
         "/radio": (context) => const RadioScreen(),
         "/benefits": (context) => const BenefitsScreen(),
         "/user": (context) => const UserScreen(),
-        "/fullScreenVideoPlayer" : (context) => const FullScreenWebViewPlayer(),
+        "/fullScreenVideoPlayer": (context) => const FullScreenWebViewPlayer(),
         "/news": (context) => const OnlineNewspapersScreen(),
         '/favorites': (context) => const FavoritesScreen(),
         '/forgot-password': (context) => const ForgotPasswordScreen(),
