@@ -5,7 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:ratingapp_mobile/ui/screens/benefits/benefits_screen.dart';
 import 'package:ratingapp_mobile/screens/channels_screen.dart';
 import 'package:ratingapp_mobile/ui/screens/main/main_screen.dart';
-import 'package:ratingapp_mobile/screens/radio_screen.dart';
+import 'package:ratingapp_mobile/ui/screens/radio/radio_screen.dart';
 import 'package:ratingapp_mobile/ui/screens/user/user_screen.dart';
 import 'package:ratingapp_mobile/ui/screens/welcome/welcome_screen.dart';
 import 'package:ratingapp_mobile/ui/screens/login/login_screen.dart';
