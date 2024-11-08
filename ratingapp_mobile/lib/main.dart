@@ -11,7 +11,7 @@ import 'package:ratingapp_mobile/ui/screens/welcome/welcome_screen.dart';
 import 'package:ratingapp_mobile/ui/screens/login/login_screen.dart';
 import 'package:ratingapp_mobile/ui/screens/register/register_screen.dart';
 import 'package:ratingapp_mobile/ui/widgets/full_screen_web_view_player.dart';
-import 'package:ratingapp_mobile/screens/online_newspapers_screen.dart';
+import 'package:ratingapp_mobile/ui/screens/news/online_newspapers_screen.dart';
 import 'package:ratingapp_mobile/screens/favorites_screen.dart';
 import 'package:ratingapp_mobile/ui/screens/forgot_password/forgot_password_screen.dart';
 

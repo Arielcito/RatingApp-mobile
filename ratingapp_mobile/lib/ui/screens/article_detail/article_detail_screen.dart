@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:ratingapp_mobile/theme/custom_colors.dart';
 import 'package:ratingapp_mobile/theme/custom_styles.dart';
+import 'package:ratingapp_mobile/theme/custom_text_styles.dart';
 
 class ArticleDetailScreen extends StatelessWidget {
   final String imageUrl;
@@ -16,10 +18,35 @@ class ArticleDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final toolbarTextStyle = CustomTextStyles.title(
+      fontSize: 20,
+      fontWeight: FontWeight.bold,
+      color: CustomColors.bluePrimary,
+    );
+
+    final titleTextStyle = TextStyle(
+      fontSize: 24,
+      fontWeight: FontWeight.bold,
+      color: CustomStyles.colorDeepBlue,
+    );
+
+    const contentTextStyle = TextStyle(
+      fontSize: 16,
+      color: Colors.black87,
+      height: 1.5,
+    );
+
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Noticia'),
-        backgroundColor: CustomStyles.colorDeepBlue,
+        title: Text(
+          'Noticia',
+          style: CustomTextStyles.body(fontSize: 20),
+        ),
+        backgroundColor: CustomColors.bluePrimary,
+        iconTheme: const IconThemeData(
+          color: Colors.white,
+        ),
+        toolbarTextStyle: toolbarTextStyle,
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -38,29 +65,17 @@ class ArticleDetailScreen extends StatelessWidget {
                 children: [
                   Text(
                     title,
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: CustomStyles.colorDeepBlue,
-                    ),
+                    style: titleTextStyle,
                   ),
                   const SizedBox(height: 16),
                   Text(
                     description,
-                    style: const TextStyle(
-                      fontSize: 16,
-                      color: Colors.black87,
-                      height: 1.5,
-                    ),
+                    style: contentTextStyle,
                   ),
                   const SizedBox(height: 16),
                   Text(
                     content,
-                    style: const TextStyle(
-                      fontSize: 16,
-                      color: Colors.black87,
-                      height: 1.5,
-                    ),
+                    style: contentTextStyle,
                   ),
                 ],
               ),
@@ -70,4 +85,4 @@ class ArticleDetailScreen extends StatelessWidget {
       ),
     );
   }
-} 
+}

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ratingapp_mobile/theme/custom_styles.dart';
-import 'package:ratingapp_mobile/screens/article_detail_screen.dart';
+import 'package:ratingapp_mobile/ui/screens/article_detail/article_detail_screen.dart';
 
 class NewspaperArticleWidget extends StatelessWidget {
   final String imageUrl;

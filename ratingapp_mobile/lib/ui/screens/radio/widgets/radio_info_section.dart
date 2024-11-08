@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ratingapp_mobile/theme/custom_text_styles.dart';
 
 class RadioInfoSection extends StatelessWidget {
   final double titleFontSize;
@@ -12,24 +13,10 @@ class RadioInfoSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var titleTextStyle = TextStyle(
-            color: Colors.white,
-            fontSize: titleFontSize,
-            fontFamily: "Poppins",
-            fontWeight: FontWeight.bold,
-          );
-    var subtitleTextStyle = TextStyle(
-            color: Colors.white,
-            fontSize: subtitleFontSize,
-            fontFamily: "Poppins",
-            fontWeight: FontWeight.w400,
-          );
-    var subtitleTextStyle2 = TextStyle(
-            color: Colors.white,
-            fontSize: subtitleFontSize,
-            fontFamily: "Poppins",
-            fontWeight: FontWeight.w400,
-          );
+    var titleTextStyle = CustomTextStyles.title(
+            fontSize: titleFontSize, fontWeight: FontWeight.bold);
+    var subtitleTextStyle = CustomTextStyles.subtitle(fontSize: subtitleFontSize, fontWeight: FontWeight.w400);
+
     return Column(
       children: [
         Text(
@@ -46,7 +33,7 @@ class RadioInfoSection extends StatelessWidget {
         SizedBox(height: titleFontSize * 0.3),
         Text(
           'La Plata, Buenos Aires, Argentina',
-          style: subtitleTextStyle2,
+          style: subtitleTextStyle,
           textAlign: TextAlign.center,
         ),
       ],
