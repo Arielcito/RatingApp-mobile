@@ -48,6 +48,16 @@ class WelcomeScreen extends StatelessWidget {
                           buttonFontSize: buttonFontSize,
                         ),
                         const Spacer(),
+                        Padding(
+                          padding: EdgeInsets.only(bottom: separatorVertical),
+                          child: const Text(
+                            'Version 1.0.0',
+                            style: TextStyle(
+                              color: Colors.grey,
+                              fontSize: 12,
+                            ),
+                          ),
+                        ),
                       ],
                     )
                   ],
