@@ -62,13 +62,24 @@ class NewspaperArticleWidget extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    title,
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: CustomStyles.colorDeepBlue,
-                    ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        title,
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: CustomStyles.colorDeepBlue,
+                        ),
+                      ),
+                      IconButton(
+                        icon: Icon(Icons.favorite_border),
+                        onPressed: () {
+                          // Add logic to handle adding to favorites
+                        },
+                      ),
+                    ],
                   ),
                   const SizedBox(height: 8),
                   Text(

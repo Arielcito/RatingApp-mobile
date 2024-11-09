@@ -22,7 +22,9 @@ class SecondaryAppBarWidget extends StatelessWidget
         children: [
           IconButton(
             icon: const Icon(Icons.favorite, color: Colors.red),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, '/favorites');
+            },
           ),
           IconButton(
             icon: const Icon(Icons.emoji_events_outlined, color: Colors.yellow),
