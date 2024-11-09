@@ -35,6 +35,12 @@ class _MyDataScreenState extends State<MyDataScreen> {
         title: const Text('Mis datos'),
         backgroundColor: Colors.transparent,
         elevation: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pushNamed(context, '/profile'); // Navegar a la pantalla de perfil
+          },
+        ),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),

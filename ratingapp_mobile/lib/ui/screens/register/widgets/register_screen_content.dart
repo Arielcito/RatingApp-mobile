@@ -53,6 +53,18 @@ class _RegisterScreenContentState extends State<RegisterScreenContent> {
 
   @override
   Widget build(BuildContext context) {
+    // Definir el estilo del input con texto blanco
+    final inputStyle = const TextStyle(
+      color: Colors.white,
+      fontFamily: 'Poppins',
+    );
+
+    // Definir el estilo para el texto del dropdown
+    final dropdownStyle = const TextStyle(
+      color: Colors.white,
+      fontFamily: 'Poppins',
+    );
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30),
       child: Form(
@@ -72,8 +84,11 @@ class _RegisterScreenContentState extends State<RegisterScreenContent> {
             const SizedBox(height: 50),
             TextFormField(
               controller: _usernameController,
-              decoration: CustomStyles.inputDecoration
-                  .copyWith(labelText: 'Nombre de usuario'),
+              style: inputStyle,
+              decoration: CustomStyles.inputDecoration.copyWith(
+                labelText: 'Nombre de usuario',
+                labelStyle: inputStyle,
+              ),
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Por favor ingrese un nombre de usuario';
@@ -87,7 +102,11 @@ class _RegisterScreenContentState extends State<RegisterScreenContent> {
             const SizedBox(height: 15),
             TextFormField(
               controller: _dniController,
-              decoration: CustomStyles.inputDecoration.copyWith(labelText: 'DNI'),
+              style: inputStyle,
+              decoration: CustomStyles.inputDecoration.copyWith(
+                labelText: 'DNI',
+                labelStyle: inputStyle,
+              ),
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Por favor ingrese su DNI';
@@ -101,7 +120,11 @@ class _RegisterScreenContentState extends State<RegisterScreenContent> {
             const SizedBox(height: 15),
             TextFormField(
               controller: _phoneController,
-              decoration: CustomStyles.inputDecoration.copyWith(labelText: 'Teléfono'),
+              style: inputStyle,
+              decoration: CustomStyles.inputDecoration.copyWith(
+                labelText: 'Teléfono',
+                labelStyle: inputStyle,
+              ),
               keyboardType: TextInputType.phone,
               validator: (value) {
                 if (value == null || value.isEmpty) {
@@ -116,7 +139,11 @@ class _RegisterScreenContentState extends State<RegisterScreenContent> {
             const SizedBox(height: 15),
             TextFormField(
               controller: _emailController,
-              decoration: CustomStyles.inputDecoration.copyWith(labelText: 'Email'),
+              style: inputStyle,
+              decoration: CustomStyles.inputDecoration.copyWith(
+                labelText: 'Email',
+                labelStyle: inputStyle,
+              ),
               keyboardType: TextInputType.emailAddress,
               validator: (value) {
                 if (value == null || value.isEmpty) {
@@ -131,8 +158,12 @@ class _RegisterScreenContentState extends State<RegisterScreenContent> {
             const SizedBox(height: 15),
             TextFormField(
               controller: _passwordController,
+              style: inputStyle,
+              decoration: CustomStyles.inputDecoration.copyWith(
+                labelText: 'Contraseña',
+                labelStyle: inputStyle,
+              ),
               obscureText: true,
-              decoration: CustomStyles.inputDecoration.copyWith(labelText: 'Contraseña'),
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Por favor ingrese una contraseña';
@@ -146,9 +177,12 @@ class _RegisterScreenContentState extends State<RegisterScreenContent> {
             const SizedBox(height: 15),
             TextFormField(
               controller: _confirmPasswordController,
+              style: inputStyle,
+              decoration: CustomStyles.inputDecoration.copyWith(
+                labelText: 'Confirmar contraseña',
+                labelStyle: inputStyle,
+              ),
               obscureText: true,
-              decoration: CustomStyles.inputDecoration
-                  .copyWith(labelText: 'Confirmar contraseña'),
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Por favor confirme su contraseña';
@@ -162,14 +196,17 @@ class _RegisterScreenContentState extends State<RegisterScreenContent> {
             const SizedBox(height: 15),
             // Género
             DropdownButtonFormField<String>(
+              style: dropdownStyle,
+              dropdownColor: CustomStyles.colorDeepBlue, // Color de fondo del menú desplegable
               decoration: CustomStyles.inputDecoration.copyWith(
                 labelText: 'Género',
+                labelStyle: inputStyle,
               ),
               value: selectedGender,
-              items: const [
-                DropdownMenuItem(value: 'hombre', child: Text('Hombre')),
-                DropdownMenuItem(value: 'mujer', child: Text('Mujer')),
-                DropdownMenuItem(value: 'otro', child: Text('Otro')),
+              items: [
+                DropdownMenuItem(value: 'hombre', child: Text('Hombre', style: dropdownStyle)),
+                DropdownMenuItem(value: 'mujer', child: Text('Mujer', style: dropdownStyle)),
+                DropdownMenuItem(value: 'otro', child: Text('Otro', style: dropdownStyle)),
               ],
               onChanged: (String? value) {
                 setState(() {
@@ -183,9 +220,11 @@ class _RegisterScreenContentState extends State<RegisterScreenContent> {
               onTap: () => _selectDate(context),
               child: AbsorbPointer(
                 child: TextField(
+                  style: inputStyle,
                   decoration: CustomStyles.inputDecoration.copyWith(
                     labelText: 'Fecha de nacimiento',
-                    suffixIcon: const Icon(Icons.calendar_today),
+                    labelStyle: inputStyle,
+                    suffixIcon: const Icon(Icons.calendar_today, color: Colors.white),
                   ),
                   controller: TextEditingController(
                     text: selectedDate != null
@@ -198,8 +237,11 @@ class _RegisterScreenContentState extends State<RegisterScreenContent> {
             const SizedBox(height: 15),
             // Código de comunidad
             TextField(
+              controller: _communityCodeController,
+              style: inputStyle,
               decoration: CustomStyles.inputDecoration.copyWith(
                 labelText: 'Código de comunidad (opcional)',
+                labelStyle: inputStyle,
               ),
             ),
             const SizedBox(height: 15),

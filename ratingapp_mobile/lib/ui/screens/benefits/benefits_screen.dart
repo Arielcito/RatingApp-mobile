@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ratingapp_mobile/ui/screens/benefits/widgets/benefits_app_bar_widget.dart';
 import 'package:ratingapp_mobile/theme/custom_styles.dart';
 import 'package:ratingapp_mobile/ui/widgets/banner_widget.dart';
+import 'package:ratingapp_mobile/ui/widgets/app_bars/main_bottom_nav_bar.dart';
 
 class BenefitsScreen extends StatelessWidget {
   const BenefitsScreen({super.key});
@@ -45,6 +46,9 @@ class BenefitsScreen extends StatelessWidget {
             ],
           ),
         ),
+      ),
+      bottomNavigationBar: const MainBottomNavBar(
+        currentIndex: 2,
       ),
     );
   }
