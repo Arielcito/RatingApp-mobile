@@ -6,9 +6,9 @@ class RadioIconsGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<String> addButtonRoutes = [
-      '/fullScreenVideoPlayer',
-      '/radio',
-      '/fullScreenVideoPlayer',
+      '/channels',
+      '/channels',
+      '/channels',
       '/news',
     ];
 
