@@ -17,17 +17,23 @@ class MainScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Container(
           color: CustomStyles.colorDeepBlue,
-          child: const Column(
+          child: Column(
             children: [
-              BannerWidget(
-                banner: 'assets/images/sample_banner.png',
-                height: 160,
+              SizedBox(
+                width: MediaQuery.of(context).size.width,
+                child: const BannerWidget(
+                  banners: [
+                    'assets/images/sample_banner.png',
+                    'assets/images/cyber-monday.jpg'
+                  ],
+                  height: 160,
+                ),
               ),
-              SizedBox(height: 10),
-              MainScreenVideoWidget(),
-              SizedBox(height: 10),
-              RadioIconsGrid(),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
+              const MainScreenVideoWidget(),
+              const SizedBox(height: 10),
+              const RadioIconsGrid(),
+              const SizedBox(height: 10),
             ],
           ),
         ),

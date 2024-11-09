@@ -19,7 +19,7 @@ class FullScreenWebViewPlayer extends StatelessWidget {
           child: Column(
             children: [
               const BannerWidget(
-                banner: 'assets/images/sample_banner.png',
+                banners:  ['assets/images/sample_banner.png', 'assets/images/cyber-monday.jpg'],
                 height: 160,
               ),
               const SizedBox(height: 30),

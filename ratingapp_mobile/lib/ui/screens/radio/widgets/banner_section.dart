@@ -9,7 +9,7 @@ class BannerSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BannerWidget(
-      banner: 'assets/images/sample_banner.png',
+      banners: ['assets/images/sample_banner.png', 'assets/images/cyber-monday.jpg']  ,
       height: height,
     );
   }

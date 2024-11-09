@@ -17,7 +17,7 @@ class BenefitsScreen extends StatelessWidget {
           child: Column(
             children: [
               const BannerWidget(
-                banner: 'assets/images/benefits_screen/benefits_banner.png',
+                banners: ['assets/images/benefits_screen/benefits_banner.png', 'assets/images/cyber-monday.jpg']  ,
                 height: 205,
               ),
               const SizedBox(height: 20),
