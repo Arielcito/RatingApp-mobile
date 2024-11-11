@@ -92,3 +92,27 @@
 //   }
 // }
 
+class AuthService {
+  Future<LoginResponse> login(String email, String password) async {
+    try {
+      await Future.delayed(const Duration(seconds: 2));
+      
+      // Acá irían las validaciones
+      if (email == "test@example.com" && password == "password123") {
+        return LoginResponse(success: true);
+      }
+      
+      throw Exception("Credenciales inválidas");
+    } catch (e) {
+      return LoginResponse(success: false, error: e.toString());
+    }
+  }
+}
+
+// login_response.dart
+class LoginResponse {
+  final bool success;
+  final String? error;
+  
+  LoginResponse({required this.success, this.error});
+}

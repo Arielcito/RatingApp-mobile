@@ -8,8 +8,8 @@ class RadioInfoSection extends StatelessWidget {
   const RadioInfoSection({
     required this.titleFontSize,
     required this.subtitleFontSize,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -81,7 +81,7 @@ class NewspaperArticleWidget extends StatelessWidget {
                             ),
                           ),
                           IconButton(
-                            icon: Icon(Icons.favorite_border),
+                            icon: const Icon(Icons.favorite_border),
                             onPressed: () {
                               // Add logic to handle adding to favorites
                             },

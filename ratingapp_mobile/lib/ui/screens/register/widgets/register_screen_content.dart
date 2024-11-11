@@ -54,13 +54,13 @@ class _RegisterScreenContentState extends State<RegisterScreenContent> {
   @override
   Widget build(BuildContext context) {
     // Definir el estilo del input con texto blanco
-    final inputStyle = const TextStyle(
+    const inputStyle = TextStyle(
       color: Colors.white,
       fontFamily: 'Poppins',
     );
 
     // Definir el estilo para el texto del dropdown
-    final dropdownStyle = const TextStyle(
+    const dropdownStyle = TextStyle(
       color: Colors.white,
       fontFamily: 'Poppins',
     );

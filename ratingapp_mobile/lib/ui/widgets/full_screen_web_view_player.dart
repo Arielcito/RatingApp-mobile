@@ -135,9 +135,9 @@ class FullScreenWebViewPlayer extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: Column(
+      bottomNavigationBar: const Column(
         mainAxisSize: MainAxisSize.min,
-        children: const [
+        children: [
           PlayerControls(),
           MainBottomNavBar(currentIndex: 0),
         ],
