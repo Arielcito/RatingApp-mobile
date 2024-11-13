@@ -38,7 +38,7 @@ class _MyDataScreenState extends State<MyDataScreen> {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
-            Navigator.pushNamed(context, '/profile'); // Navegar a la pantalla de perfil
+            Navigator.pushNamed(context, '/user'); // Navegar a la pantalla de perfil
           },
         ),
       ),
