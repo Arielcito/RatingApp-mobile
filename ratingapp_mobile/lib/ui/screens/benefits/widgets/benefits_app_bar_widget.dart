@@ -26,7 +26,7 @@ class BenefitsAppBarWidget extends StatelessWidget
           )),
       actions: [
         IconButton(
-          icon: const Icon(Icons.favorite, color: Colors.white),
+          icon: const Icon(Icons.favorite, color: Colors.red),
           onPressed: () {},
         ),
       ],

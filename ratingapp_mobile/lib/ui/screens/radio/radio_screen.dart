@@ -6,6 +6,7 @@ import 'package:ratingapp_mobile/ui/screens/radio/widgets/radio_info_section.dar
 import 'package:ratingapp_mobile/ui/widgets/app_bars/main_bottom_nav_bar.dart';
 import 'package:ratingapp_mobile/ui/widgets/player_controls.dart';
 import 'package:ratingapp_mobile/ui/widgets/secondary_app_bar_widget.dart';
+import 'package:ratingapp_mobile/ui/widgets/survey_widget.dart';
 
 class RadioScreen extends StatelessWidget {
   const RadioScreen({super.key});
@@ -26,17 +27,18 @@ class RadioScreen extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    // Banner widget (En duda de si mostrarlo o no)
                     BannerSection(height: size.height * 0.1),
                     SizedBox(height: size.height * 0.03),
-                    // Información de la radio
                     RadioInfoSection(
                       titleFontSize: size.width * 0.05,
                       subtitleFontSize: size.width * 0.04,
                     ),
                     SizedBox(height: size.height * 0.03),
-                    // Contenedor de controles de la radio
                     PlayerContainer(size: size.width * 0.7),
+                    const SurveyWidget(
+                      question: '¿Qué tipo de música prefieres?',
+                      options: ['Rock', 'Pop', 'Clásica', 'Jazz'],
+                    ),
                     const Spacer(),
                   ],
                 ),
