@@ -27,7 +27,7 @@ class RadioScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     // Banner widget (En duda de si mostrarlo o no)
-                    BannerSection(height: size.height * 0.1),
+                    BannerSection(height: 160),
                     SizedBox(height: size.height * 0.03),
                     // Información de la radio
                     RadioInfoSection(
