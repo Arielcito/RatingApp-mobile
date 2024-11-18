@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:ratingapp_mobile/theme/custom_styles.dart';
-import 'package:ratingapp_mobile/ui/widgets/app_bars/main_app_bar.dart';
 import 'package:ratingapp_mobile/ui/widgets/app_bars/main_bottom_nav_bar.dart';
 import 'package:ratingapp_mobile/ui/widgets/newspaper_article_widget.dart';
 
+import '../../widgets/secondary_app_bar_widget.dart';
+
 class OnlineNewspapersScreen extends StatelessWidget {
   const OnlineNewspapersScreen({super.key});
+
   List<Map<String, String>> generateArticles() {
     return [
       {
@@ -37,26 +39,23 @@ class OnlineNewspapersScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
     final articles = generateArticles();
-
+    
     return Scaffold(
-      appBar: const MainAppBar(),
-      body: Container(
-        color: CustomStyles.colorDeepBlue,
-        child: ListView.builder(
-          padding: const EdgeInsets.only(top: 16, bottom: 16),
-          itemCount: articles.length,
-          itemBuilder: (context, index) {
-            final article = articles[index];
-            return NewspaperArticleWidget(
-              imageUrl: article['imageUrl']!,
-              title: article['title']!,
-              description: article['description']!,
-              content: article['content']!,
-            );
-          },
-        ),
+      backgroundColor: CustomStyles.colorDeepBlue,
+      appBar: const SecondaryAppBarWidget(),
+      body: ListView.builder(
+        padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
+        itemCount: articles.length,
+        itemBuilder: (context, index) {
+          final article = articles[index];
+          return NewspaperArticleWidget(
+            imageUrl: article['imageUrl']!,
+            title: article['title']!,
+            description: article['description']!,
+            content: article['content']!,
+          );
+        },
       ),
       bottomNavigationBar: const MainBottomNavBar(currentIndex: 4),
     );

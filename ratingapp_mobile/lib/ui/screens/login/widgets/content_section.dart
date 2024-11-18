@@ -8,6 +8,11 @@ class ContentSection extends StatelessWidget {
   final double separatorVertical;
   final double titleFontSize;
   final double subtitleFontSize;
+  final TextEditingController emailController;
+  final TextEditingController passwordController;
+  final bool isLoading;
+  final String? errorMessage;
+  final VoidCallback onLogin;
 
   const ContentSection({
     super.key,
@@ -15,7 +20,13 @@ class ContentSection extends StatelessWidget {
     required this.separatorVertical,
     required this.titleFontSize,
     required this.subtitleFontSize,
+    required this.emailController,
+    required this.passwordController,
+    required this.isLoading,
+    required this.errorMessage,
+    required this.onLogin,
   });
+
 
   @override
   Widget build(BuildContext context) {
@@ -59,17 +70,24 @@ class ContentSection extends StatelessWidget {
           child: Column(
             children: [
               TextField(
-                decoration:
-                    CustomStyles.inputDecoration.copyWith(labelText: 'Email'),
+                controller: emailController,
+                decoration: CustomStyles.inputDecoration.copyWith(
+                  labelText: 'Email',
+                  errorText: errorMessage,
+                ),
                 style: bodyWhiteTextStyle,
+                enabled: !isLoading,
               ),
               SizedBox(height: separatorVertical / 2),
               TextField(
+                controller: passwordController,
                 obscureText: true,
                 decoration: CustomStyles.inputDecoration.copyWith(
-                    labelText: 'Contraseña',
-                    fillColor: const Color(0xFF003459)),
+                  labelText: 'Contraseña',
+                  fillColor: const Color(0xFF003459),
+                ),
                 style: bodyWhiteTextStyle,
+                enabled: !isLoading,
               ),
               SizedBox(height: separatorVertical / 2),
               Row(
@@ -90,16 +108,35 @@ class ContentSection extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/home');
-                  },
+                  onPressed: isLoading ? null : onLogin,
                   style: loginButtonStyle,
                   child: Padding(
-                    padding: const EdgeInsets.only(top: 15, bottom: 15),
-                    child: Text('Iniciar sesión', style: subtitleTextStyle),
+                    padding: const EdgeInsets.symmetric(vertical: 15),
+                    child: isLoading
+                        ? const SizedBox(
+                            height: 20,
+                            width: 20,
+                            child: CircularProgressIndicator(
+                              color: Colors.white,
+                              strokeWidth: 2,
+                            ),
+                          )
+                        : Text('Iniciar sesión', style: subtitleTextStyle),
                   ),
                 ),
               ),
+              if (errorMessage != null)
+                Padding(
+                  padding: EdgeInsets.only(top: separatorVertical / 2),
+                  child: Text(
+                    errorMessage!,
+                    style: TextStyle(
+                      color: Colors.red[300],
+                      fontSize: subtitleFontSize * 0.8,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
             ],
           ),
         ),

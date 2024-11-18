@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class PlayerContainer extends StatelessWidget {
   final double size;
 
-  const PlayerContainer({required this.size, Key? key}) : super(key: key);
+  const PlayerContainer({required this.size, super.key});
 
   @override
   Widget build(BuildContext context) {
