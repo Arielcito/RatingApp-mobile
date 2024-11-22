@@ -35,10 +35,6 @@ class NewspaperArticleWidget extends StatelessWidget {
       },
       child: Column(
         children: [
-          const BannerWidget(
-            banners: ['assets/images/sample_banner.png', 'assets/images/cyber-monday.jpg'],
-            height: 160,
-          ),
           Container(
             margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             decoration: BoxDecoration(
